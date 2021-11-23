@@ -28,7 +28,8 @@ public class User {
     }
 
     IRoleService roleService = new RoleServiceImpl();
-    public String getRoleName(){
+
+    public String getRoleName() {
         return roleService.findOne(role_id).getName();
     }
 

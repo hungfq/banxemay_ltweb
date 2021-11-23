@@ -15,6 +15,12 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
+    public List<Order> findAllBySeller(int seller_id) {
+        String sql = "select * from Orders where seller_id = ?";
+        return query(sql, new OrderMapper(), seller_id);
+    }
+
+    @Override
     public Order findOne(int id) {
         String sql = "select * from Orders where id = ?";
         List<Order> order = query(sql, new OrderMapper(), id);

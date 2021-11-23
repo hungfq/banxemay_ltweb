@@ -17,7 +17,7 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     @Override
     public User findOne(int id) {
         String sql = "select * from Users where id = ?";
-        List<User> users = query(sql, new UserMapper(),id);
+        List<User> users = query(sql, new UserMapper(), id);
         return users.isEmpty() ? null : users.get(0);
     }
 

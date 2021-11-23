@@ -15,6 +15,11 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public List<Order> findAllBySeller(int seller_id) {
+        return orderDAO.findAllBySeller(seller_id);
+    }
+
+    @Override
     public Order findOne(int id) {
         return orderDAO.findOne(id);
     }

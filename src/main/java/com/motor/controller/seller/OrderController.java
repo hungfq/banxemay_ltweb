@@ -1,12 +1,18 @@
 package com.motor.controller.seller;
 
-import java.io.IOException;
+import com.motor.model.Order;
+import com.motor.model.User;
+import com.motor.service.IOrderService;
+import com.motor.service.impl.OrderServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.List;
 
 @WebServlet(urlPatterns = {"/seller/order"})
 public class OrderController extends HttpServlet {
@@ -19,21 +25,12 @@ public class OrderController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
+        IOrderService orderService = new OrderServiceImpl();
+        HttpSession session = req.getSession();
+        User user = (User) session.getAttribute("loginedUser");
+        List<Order> orders = orderService.findAllBySeller(user.getId());
 
-        // b1: khởi tạo DAO
-//		ProductDAOImpl productDAO = new ProductDAOImpl();
-//		CategoryDAO categoryDAO = new CategoryDAO();
-//		// b2: sd đối tượng list để chứa ds từ productDAO
-//		List<ProductModel> listtop4 = productDAO.getTop4Product();
-//		List<ProductModel> listtop1amount = productDAO.getTop1ProductAmount();
-//		List<ProductModel> listtop4amount = productDAO.getTop4ProductAmount();
-//		List<CategoryModel> listallcate = categoryDAO.getAllCategory();
-//		// b3: thiết lập dữ liệu lên jsp
-//		req.setAttribute("list4product", listtop4);
-//		req.setAttribute("list1productamount", listtop1amount);
-//		req.setAttribute("list4productamount", listtop4amount);
-//		req.setAttribute("listcate", listallcate);
-        // b4: trả về trang jsp nào
+        req.setAttribute("orders", orders);
         req.setAttribute("active", 2);
         req.getRequestDispatcher("/views/seller/order.jsp").forward(req, resp);
     }
