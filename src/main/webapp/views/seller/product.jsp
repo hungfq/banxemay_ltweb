@@ -65,9 +65,9 @@
                                     <th width="15%">Mô tả</th>
                                     <th width="10%">Loại</th>
                                     <th width="10%">Thương hiệu</th>
-                                    <th width="5%">Tồn kho</th>
+                                    <th width="3%">Tồn kho</th>
                                     <th width="5%">Trạng thái</th>
-                                    <th width="10%">Hành động</th>
+                                    <th width="12%">Hành động</th>
                                 </tr>
                                 </thead>
                                 <tbody>
