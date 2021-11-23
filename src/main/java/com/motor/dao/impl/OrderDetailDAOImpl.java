@@ -16,6 +16,12 @@ public class OrderDetailDAOImpl extends AbstractDAO<OrderDetail> implements IOrd
     }
 
     @Override
+    public List<OrderDetail> findAllByOrderId(int orderId) {
+        String sql = "select * from OrderDetails where order_id = ?";
+        return query(sql, new OrderDetailMapper(), orderId);
+    }
+
+    @Override
     public OrderDetail findOne(int id) {
         String sql = "select * from OrderDetails where id = ?";
         List<OrderDetail> orderDetails = query(sql, new OrderDetailMapper(), id);

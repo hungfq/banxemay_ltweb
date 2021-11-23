@@ -30,6 +30,12 @@ public class Order {
     public String getCustomerName() {
         return userService.findOne(customer_id).getfullname();
     }
+    public String getCustomerEmail() {
+        return userService.findOne(customer_id).getMail();
+    }
+    public String getCustomerPhone() {
+        return userService.findOne(customer_id).getPhone();
+    }
 
     public String getSellerName() {
         return userService.findOne(seller_id).getfullname();

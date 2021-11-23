@@ -10,4 +10,5 @@ public interface IOrderService {
     List<Order> findAllBySeller(int seller_id);
 
     Order findOne(int id);
+    void updateStatus(Order order);
 }

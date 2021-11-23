@@ -27,6 +27,10 @@ public class OrderDetail {
         return productService.findOne(product_id).getName();
     }
 
+    public int getOriginalPrice() {
+        return productService.findOne(product_id).getPrice();
+    }
+
     public int getId() {
         return id;
     }

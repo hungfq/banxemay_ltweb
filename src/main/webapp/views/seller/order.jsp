@@ -89,7 +89,7 @@
                                         <td>${order.getPayment()}</td>
                                         <td>${order.getOrderStatus()}</td>
                                         <td>
-                                            <a href="#"
+                                            <a href="orderview?action=view&id=${order.id}"
                                                class="btn btn-primary">Chi tiết</a>
                                         </td>
                                     </tr>

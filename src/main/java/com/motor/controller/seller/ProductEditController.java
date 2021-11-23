@@ -41,10 +41,11 @@ public class ProductEditController extends HttpServlet {
 
         Product product = new Product();
 
+
         String action = req.getParameter("action");
+        String ac = action == null ? "" : action;
 
-
-        if (action.equals("edit")) {
+        if (ac.equals("edit")) {
             int id = Integer.parseInt(req.getParameter("id"));
             product = productService.findOne(id);
             if (product.getSeller_id() != user.getId())

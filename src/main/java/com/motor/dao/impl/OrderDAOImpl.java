@@ -26,4 +26,11 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
         List<Order> order = query(sql, new OrderMapper(), id);
         return order.isEmpty() ? null : order.get(0);
     }
+
+    @Override
+    public void updateStatus(Order order) {
+        String sql = "UPDATE [dbo].[Orders] SET [status] = ?  WHERE [id] = ?;";
+        update(sql,order.getStatus(),order.getId());
+    }
+
 }

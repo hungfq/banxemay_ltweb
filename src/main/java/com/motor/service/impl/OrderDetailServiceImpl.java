@@ -15,6 +15,11 @@ public class OrderDetailServiceImpl implements IOrderDetailService {
     }
 
     @Override
+    public List<OrderDetail> findAllByOrderId(int orderId) {
+        return orderDetailDAO.findAllByOrderId(orderId);
+    }
+
+    @Override
     public OrderDetail findOne(int id) {
         return orderDetailDAO.findOne(id);
     }

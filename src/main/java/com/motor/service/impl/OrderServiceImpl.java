@@ -23,4 +23,9 @@ public class OrderServiceImpl implements IOrderService {
     public Order findOne(int id) {
         return orderDAO.findOne(id);
     }
+
+    @Override
+    public void updateStatus(Order order) {
+        orderDAO.updateStatus(order);
+    }
 }
