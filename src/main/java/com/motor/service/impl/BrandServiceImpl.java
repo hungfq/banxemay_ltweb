@@ -5,11 +5,10 @@ import com.motor.dao.impl.BrandDAOImpl;
 import com.motor.model.Brand;
 import com.motor.service.IBrandService;
 
-import javax.inject.Inject;
 import java.util.List;
 
 public class BrandServiceImpl implements IBrandService {
-//    @Inject
+    //    @Inject
     IBrandDAO brandDAO = new BrandDAOImpl();
 
     @Override

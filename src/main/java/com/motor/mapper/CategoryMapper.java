@@ -1,12 +1,11 @@
 package com.motor.mapper;
 
 import com.motor.model.Category;
-import com.motor.model.Product;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CategoryMapper implements RowMapper<Category>{
+public class CategoryMapper implements RowMapper<Category> {
 
     @Override
     public Category mapRow(ResultSet resultSet) {

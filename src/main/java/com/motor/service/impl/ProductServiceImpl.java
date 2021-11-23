@@ -5,11 +5,10 @@ import com.motor.dao.impl.ProductDAOImpl;
 import com.motor.model.Product;
 import com.motor.service.IProductService;
 
-import javax.inject.Inject;
 import java.util.List;
 
 public class ProductServiceImpl implements IProductService {
-//    @Inject
+    //    @Inject
     IProductDAO productDAO = new ProductDAOImpl();
 
     @Override
@@ -18,8 +17,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public List<Product> findAllBySeller(int userId)
-    {
+    public List<Product> findAllBySeller(int userId) {
         return productDAO.findAllBySeller(userId);
     }
 

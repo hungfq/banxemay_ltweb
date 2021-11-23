@@ -1,7 +1,6 @@
 package com.motor.mapper;
 
 import com.motor.model.Brand;
-import com.motor.model.Category;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

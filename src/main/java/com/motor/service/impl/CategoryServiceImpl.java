@@ -5,7 +5,6 @@ import com.motor.dao.impl.CategoryDAOImpl;
 import com.motor.model.Category;
 import com.motor.service.ICategoryService;
 
-import javax.inject.Inject;
 import java.util.List;
 
 public class CategoryServiceImpl implements ICategoryService {

@@ -1,6 +1,5 @@
 package com.motor.mapper;
 
-import com.motor.model.Category;
 import com.motor.model.Role;
 
 import java.sql.ResultSet;

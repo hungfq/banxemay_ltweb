@@ -167,7 +167,7 @@
                     <form style="align-items: flex-end; display: flex; justify-content: flex-end;"
                           method="post" enctype="multipart/form-data" id="file-cloudinary">
                         <input style="visibility: hidden" class="btn btn-default btn-circle" type="file"
-                               id="file-chooser" name="files[]" multiple/>
+                               accept="image/*" id="file-chooser" name="files[]" multiple/>
                         <button class="btn btn-default btn-circle"
                                 onclick="document.getElementById('file-chooser').click();">Browse...
                         </button>

@@ -156,7 +156,6 @@ public class AbstractDAO<T> implements GenericDAO<T> {
     }
 
 
-
     @Override
     public int count(String sql, Object... parameters) {
         Connection connection = null;

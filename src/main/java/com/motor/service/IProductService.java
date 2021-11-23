@@ -12,6 +12,8 @@ public interface IProductService {
     Product findOne(int id);
 
     Long insert(Product product);
+
     void update(Product product);
+
     void delete(int id);
 }

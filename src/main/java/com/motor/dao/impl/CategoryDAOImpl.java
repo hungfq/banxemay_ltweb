@@ -3,9 +3,7 @@ package com.motor.dao.impl;
 import com.motor.dao.ICategoryDAO;
 import com.motor.mapper.AbstractDAO;
 import com.motor.mapper.CategoryMapper;
-import com.motor.mapper.ProductMapper;
 import com.motor.model.Category;
-import com.motor.model.Product;
 
 import java.util.List;
 

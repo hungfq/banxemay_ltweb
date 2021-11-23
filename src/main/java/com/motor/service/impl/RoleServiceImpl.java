@@ -5,11 +5,10 @@ import com.motor.dao.impl.RoleDAOImpl;
 import com.motor.model.Role;
 import com.motor.service.IRoleService;
 
-import javax.inject.Inject;
 import java.util.List;
 
 public class RoleServiceImpl implements IRoleService {
-//    @Inject
+    //    @Inject
     IRoleDAO roleDAO = new RoleDAOImpl();
 
     @Override

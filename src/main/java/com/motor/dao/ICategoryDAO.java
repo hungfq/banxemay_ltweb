@@ -1,7 +1,6 @@
 package com.motor.dao;
 
 import com.motor.model.Category;
-import com.motor.model.Product;
 
 import java.util.List;
 
