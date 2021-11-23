@@ -90,7 +90,9 @@
                                         <td>
                                             <a class="btn btn-primary"
                                                href="productedit?action=edit&id=${pro.id}">Sửa</a>
-                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>
+<%--                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>--%>
+                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}"
+                                               onclick="return confirm('Do you want to delete?');">Xóa</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
