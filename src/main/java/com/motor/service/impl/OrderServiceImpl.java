@@ -3,12 +3,14 @@ package com.motor.service.impl;
 import com.motor.dao.IOrderDAO;
 import com.motor.dao.impl.OrderDAOImpl;
 import com.motor.model.Order;
+import com.motor.model.User;
 import com.motor.service.IOrderService;
 
 import java.util.List;
 
 public class OrderServiceImpl implements IOrderService {
     IOrderDAO orderDAO = new OrderDAOImpl();
+
     @Override
     public List<Order> findAll() {
         return orderDAO.findAll();
@@ -28,4 +30,31 @@ public class OrderServiceImpl implements IOrderService {
     public void updateStatus(Order order) {
         orderDAO.updateStatus(order);
     }
+
+    @Override
+    public int countBySeller(int seller_id) {
+        return orderDAO.countBySeller(seller_id);
+    }
+
+    @Override
+    public int orderMoneyTotal(int seller_id) {
+        return orderDAO.orderMoneyTotal(seller_id);
+    }
+
+    @Override
+    public int orderMoneyAverages(int seller_id) {
+        return orderDAO.orderMoneyAverages(seller_id);
+    }
+
+    @Override
+    public List<User> findUserBySeller(int seller_id) {
+        return orderDAO.findUserBySeller(seller_id);
+    }
+
+    @Override
+    public int getRevenueBySellerInMonth(int seller_id, int month, int year) {
+        return orderDAO.getRevenueBySellerInMonth(seller_id, month, year);
+    }
+
+
 }

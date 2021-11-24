@@ -40,4 +40,9 @@ public class ProductServiceImpl implements IProductService {
     public void delete(int id) {
         productDAO.delete(id);
     }
+
+    @Override
+    public List<Product> findTopSelling(int seller_id) {
+        return productDAO.findTopSelling(seller_id);
+    }
 }

@@ -4,22 +4,17 @@
 
 <head>
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
-    <link
-            href="<c:url value="/templates/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>"
-            rel="stylesheet" type="text/css"/>
-    <link
-            href="<c:url value="/templates/assets/global/plugins/fullcalendar/fullcalendar.min.css"/>"
-            rel="stylesheet" type="text/css"/>
-    <link
-            href="<c:url value="/templates/assets/global/plugins/jqvmap/jqvmap/jqvmap.css"/>"
-            rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="/templates/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>"
+          rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="/templates/assets/global/plugins/fullcalendar/fullcalendar.min.css"/>"
+          rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="/templates/assets/global/plugins/jqvmap/jqvmap/jqvmap.css"/>"
+          rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL PLUGIN STYLES -->
     <!-- BEGIN PAGE STYLES -->
-    <link
-            href="<c:url value="/templates/assets/admin/pages/css/tasks.css"/>"
-            rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="/templates/assets/admin/pages/css/tasks.css"/>"
+          rel="stylesheet" type="text/css"/>
     <!-- END PAGE STYLES -->
-
     <%@include file="/common/seller/theme.jsp" %>
 
 </head>
@@ -41,25 +36,7 @@
             <%-- <%@include file="/common/seller/toolbar.jsp"%> --%>
 
         </div>
-        <!-- END PAGE HEAD -->
-        <!-- BEGIN PAGE BREADCRUMB -->
-<%--        <ul class="page-breadcrumb breadcrumb">--%>
-<%--            <li><a href="#">Home</a><i class="fa fa-circle"></i></li>--%>
-<%--            <li><a href="#">Features</a><i class="fa fa-circle"></i></li>--%>
-<%--            <li class="active">Home</li>--%>
-<%--        </ul>--%>
-        <!-- END PAGE BREADCRUMB -->
-        <!-- BEGIN PAGE CONTENT INNER -->
-        <!-- <div class="note note-danger">
-        <h4>Meet Meronic's brand new admin layout - Admin 4!</h4>
-        <p>
-            Admin 4 layout supports all the features from <a href="../admin/"
-                target="_blank">Admin 1</a>, <a href="../admin2/" target="_blank">Admin
-                2</a> and <a href="../admin3/" target="_blank">Admin 3</a> layout demo
-            pages. Admin 4 also comes with <a href="angularjs">AngularJS
-                Version!</a>.
-        </p>
-    </div> -->
+
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat2">
@@ -179,13 +156,13 @@
                             <div class="btn-group btn-group-devided" data-toggle="buttons">
                                 <label
                                         class="btn btn-transparent grey-salsa btn-circle btn-sm active">
-                                    <input type="radio" name="options" class="toggle" id="option1">Today
+                                    <input type="radio" name="options" class="toggle" id="option4">Today
                                 </label> <label
                                     class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Week
+                                <input type="radio" name="options" class="toggle" id="option5">Week
                             </label> <label
                                     class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Month
+                                <input type="radio" name="options" class="toggle" id="option3">Month
                             </label>
                             </div>
                         </div>
@@ -270,10 +247,10 @@
                                     <input type="radio" name="options" class="toggle" id="option1">Today
                                 </label> <label
                                     class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Week
+                                <input type="radio" name="options" class="toggle" id="option7">Week
                             </label> <label
                                     class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Month
+                                <input type="radio" name="options" class="toggle" id="option6">Month
                             </label>
                             </div>
                         </div>

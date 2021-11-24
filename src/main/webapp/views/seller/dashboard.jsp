@@ -22,14 +22,6 @@
 
         </div>
         <!-- END PAGE HEAD -->
-        <!-- BEGIN PAGE BREADCRUMB -->
-<%--        <ul class="page-breadcrumb breadcrumb">--%>
-<%--            <li><a href="#">Home</a><i class="fa fa-circle"></i></li>--%>
-<%--            <li><a href="#">Features</a><i class="fa fa-circle"></i></li>--%>
-<%--            <li class="active">Dashboard</li>--%>
-<%--        </ul>--%>
-        <!-- END PAGE BREADCRUMB -->
-
 
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
@@ -39,7 +31,11 @@
                         <i class="fa fa-briefcase fa-icon-medium"></i>
                     </div>
                     <div class="details">
-                        <div class="number">$168,492.54</div>
+                        <div class="number"><fmt:formatNumber
+                                value="${orderMoneyTotal}"
+                                type="currency"
+                                maxFractionDigits="0"
+                                currencySymbol="VNĐ"/></div>
                         <div class="desc">Lifetime Sales</div>
                     </div>
                     <a class="more" href="#"> View more <i
@@ -53,7 +49,7 @@
                         <i class="fa fa-shopping-cart"></i>
                     </div>
                     <div class="details">
-                        <div class="number">1,127,390</div>
+                        <div class="number"> ${totalOrder} </div>
                         <div class="desc">Total Orders</div>
                     </div>
                     <a class="more" href="#"> View more <i
@@ -67,7 +63,11 @@
                         <i class="fa fa-group fa-icon-medium"></i>
                     </div>
                     <div class="details">
-                        <div class="number">$670.54</div>
+                        <div class="number"><fmt:formatNumber
+                                value="${orderMoneyAverages}"
+                                type="currency"
+                                maxFractionDigits="0"
+                                currencySymbol="VNĐ"/></div>
                         <div class="desc">Average Orders</div>
                     </div>
                     <a class="more" href="#"> View more <i
@@ -99,24 +99,10 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#overview_1" data-toggle="tab">
                                     Top Selling </a></li>
-                                <li><a href="#overview_2" data-toggle="tab"> Most
-                                    Viewed </a></li>
+                                <%--                                <li><a href="#overview_2" data-toggle="tab"> Most--%>
+                                <%--                                    Viewed </a></li>--%>
                                 <li><a href="#overview_3" data-toggle="tab"> Customers
                                 </a></li>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle"
-                                                        data-toggle="dropdown"> Orders <i class="fa fa-angle-down"></i>
-                                </a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#overview_4" tabindex="-1"
-                                               data-toggle="tab"> Latest 10 Orders </a></li>
-                                        <li><a href="#overview_4" tabindex="-1"
-                                               data-toggle="tab"> Pending Orders </a></li>
-                                        <li><a href="#overview_4" tabindex="-1"
-                                               data-toggle="tab"> Completed Orders </a></li>
-                                        <li><a href="#overview_4" tabindex="-1"
-                                               data-toggle="tab"> Rejected Orders </a></li>
-                                    </ul>
-                                </li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="overview_1">
@@ -131,126 +117,21 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td><a href="#"> Apple iPhone 4s - 16GB - Black </a></td>
-                                                <td>$625.50</td>
-                                                <td>809</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Samsung Galaxy S III SGH-I747 -
-                                                    16GB </a></td>
-                                                <td>$915.50</td>
-                                                <td>6709</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Motorola Droid 4 XT894 - 16GB -
-                                                    Black </a></td>
-                                                <td>$878.50</td>
-                                                <td>784</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Regatta Luca 3 in 1 Jacket </a></td>
-                                                <td>$25.50</td>
-                                                <td>1245</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Samsung Galaxy Note 3 </a></td>
-                                                <td>$925.50</td>
-                                                <td>21245</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Inoval Digital Pen </a></td>
-                                                <td>$125.50</td>
-                                                <td>1245</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Metronic - Responsive Admin +
-                                                    Frontend Theme </a></td>
-                                                <td>$20.00</td>
-                                                <td>11190</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="overview_2">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-hover table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th>Product Name</th>
-                                                <th>Price</th>
-                                                <th>Views</th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td><a href="#"> Metronic - Responsive Admin +
-                                                    Frontend Theme </a></td>
-                                                <td>$20.00</td>
-                                                <td>11190</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Regatta Luca 3 in 1 Jacket </a></td>
-                                                <td>$25.50</td>
-                                                <td>1245</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Apple iPhone 4s - 16GB - Black </a></td>
-                                                <td>$625.50</td>
-                                                <td>809</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Samsung Galaxy S III SGH-I747 -
-                                                    16GB </a></td>
-                                                <td>$915.50</td>
-                                                <td>6709</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Motorola Droid 4 XT894 - 16GB -
-                                                    Black </a></td>
-                                                <td>$878.50</td>
-                                                <td>784</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Samsung Galaxy Note 3 </a></td>
-                                                <td>$925.50</td>
-                                                <td>21245</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Inoval Digital Pen </a></td>
-                                                <td>$125.50</td>
-                                                <td>1245</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
+                                            <c:forEach items="${topSelling}" var="item">
+                                                <tr>
+                                                    <td>
+                                                        <a href="productedit?action=edit&id=${item.id}">
+                                                                ${item.name} </a></td>
+                                                    <td><fmt:formatNumber
+                                                            value="${item.price}"
+                                                            type="currency"
+                                                            maxFractionDigits="0"
+                                                            currencySymbol="VNĐ"/></td>
+                                                    <td>${item.amount}</td>
+                                                    <td><a href="productedit?action=edit&id=${item.id}"
+                                                           class="btn default btn-xs green-stripe"> View </a></td>
+                                                </tr>
+                                            </c:forEach>
                                             </tbody>
                                         </table>
                                     </div>
@@ -263,139 +144,23 @@
                                                 <th>Customer Name</th>
                                                 <th>Total Orders</th>
                                                 <th>Total Amount</th>
-                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td><a href="#"> David Wilson </a></td>
-                                                <td>3</td>
-                                                <td>$625.50</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Amanda Nilson </a></td>
-                                                <td>4</td>
-                                                <td>$12625.50</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Jhon Doe </a></td>
-                                                <td>2</td>
-                                                <td>$125.00</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Bill Chang </a></td>
-                                                <td>45</td>
-                                                <td>$12,125.70</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Paul Strong </a></td>
-                                                <td>1</td>
-                                                <td>$890.85</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Jane Hilson </a></td>
-                                                <td>5</td>
-                                                <td>$239.85</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Patrick Walker </a></td>
-                                                <td>2</td>
-                                                <td>$1239.85</td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="overview_4">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-hover table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th>Customer Name</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td><a href="#"> David Wilson </a></td>
-                                                <td>3 Jan, 2013</td>
-                                                <td>$625.50</td>
-                                                <td><span class="label label-sm label-warning">
-																Pending </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Amanda Nilson </a></td>
-                                                <td>13 Feb, 2013</td>
-                                                <td>$12625.50</td>
-                                                <td><span class="label label-sm label-warning">
-																Pending </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Jhon Doe </a></td>
-                                                <td>20 Mar, 2013</td>
-                                                <td>$125.00</td>
-                                                <td><span class="label label-sm label-success">
-																Success </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Bill Chang </a></td>
-                                                <td>29 May, 2013</td>
-                                                <td>$12,125.70</td>
-                                                <td><span class="label label-sm label-info">
-																In Process </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Paul Strong </a></td>
-                                                <td>1 Jun, 2013</td>
-                                                <td>$890.85</td>
-                                                <td><span class="label label-sm label-success">
-																Success </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Jane Hilson </a></td>
-                                                <td>5 Aug, 2013</td>
-                                                <td>$239.85</td>
-                                                <td><span class="label label-sm label-danger">
-																Canceled </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="#"> Patrick Walker </a></td>
-                                                <td>6 Aug, 2013</td>
-                                                <td>$1239.85</td>
-                                                <td><span class="label label-sm label-success">
-																Success </span></td>
-                                                <td><a href="#"
-                                                       class="btn default btn-xs green-stripe"> View </a></td>
-                                            </tr>
+                                            <c:forEach items="${users}" var="user">
+                                                <tr>
+                                                    <td> ${user.fullname}</td>
+                                                    <td>${user.mail}</td>
+                                                        <%-- số lượng đơn hàng --%>
+                                                    <td><fmt:formatNumber
+                                                            value="${user.phone}"
+                                                            type="currency"
+                                                            maxFractionDigits="0"
+                                                            currencySymbol="VNĐ"/>
+                                                    </td>
+                                                        <%-- tổng tiền đơn hàng --%>
+                                                </tr>
+                                            </c:forEach>
                                             </tbody>
                                         </table>
                                     </div>
@@ -415,41 +180,11 @@
                                 class="caption-subject font-red-sunglo bold uppercase">Revenue</span>
                             <span class="caption-helper">weekly stats...</span>
                         </div>
-                        <ul class="nav nav-tabs">
-                            <li><a href="#portlet_tab2" data-toggle="tab"
-                                   id="statistics_amounts_tab"> Amounts </a></li>
-                            <li class="active"><a href="#portlet_tab1"
-                                                  data-toggle="tab"> Orders </a></li>
-                        </ul>
                     </div>
                     <div class="portlet-body">
                         <div class="tab-content">
-                            <div class="tab-pane active" id="portlet_tab1">
-                                <div id="statistics_1" class="chart"></div>
-                            </div>
-                            <div class="tab-pane" id="portlet_tab2">
-                                <div id="statistics_2" class="chart"></div>
-                            </div>
-                        </div>
-                        <div class="well margin-top-10 no-margin no-border">
-                            <div class="row">
-                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-                                    <span class="label label-success"> Revenue: </span>
-                                    <h3>$111K</h3>
-                                </div>
-                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-                                    <span class="label label-info"> Tax: </span>
-                                    <h3>$14K</h3>
-                                </div>
-                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-                                    <span class="label label-danger"> Shipment: </span>
-                                    <h3>$10K</h3>
-                                </div>
-                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
-                                    <span class="label label-warning"> Orders: </span>
-                                    <h3>2350</h3>
-                                </div>
-                            </div>
+                            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                            <input type="hidden" id="revenue" value="${revenue}">
                         </div>
                     </div>
                 </div>
@@ -514,15 +249,51 @@
             type="text/javascript"></script> <!-- END PAGE LEVEL SCRIPTS -->
     <script>
         jQuery(document).ready(function () {
-            /* 		Metronic.init(); // init metronic core componets
-             Layout.init(); // init layout
-             Demo.init(); // init demo features
-             Index.init(); // init index page
-             Tasks.initDashboardWidget(); // init tash dashboard widget   */
             Metronic.init(); // init metronic core components
             Layout.init(); // init current layout
             Demo.init(); // init demo features
             Index.init(); // init index page
         });
-    </script> <!-- END JAVASCRIPTS --> </content>
+
+    </script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script>
+        function getRandomRgb() {
+            var num = Math.round(0xffffff * Math.random());
+            var r = num >> 16;
+            var g = num >> 8 & 255;
+            var b = num & 255;
+            return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+        }
+        var ren = document.getElementById("revenue").value;
+        var ren_data = JSON.parse(ren);
+        // alert(ren_data);
+        var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        var ran_color = [];
+        for (let i = 0; i < 12; i++
+        ) {
+            ran_color.push(getRandomRgb());
+        }
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: ran_color,
+                    data: ren_data
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: ""
+                }
+            }
+        });
+    </script>
+</content>
 

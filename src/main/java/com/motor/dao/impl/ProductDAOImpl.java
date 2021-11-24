@@ -51,4 +51,24 @@ public class ProductDAOImpl extends AbstractDAO<Product> implements IProductDAO 
         String sql = "DELETE FROM Products WHERE id = ?";
         update(sql, id);
     }
+
+    @Override
+    public List<Product> findTopSelling(int seller_id) {
+        String sql = "select top 7 p.id as id, p.name as name, p.price as price, \n" +
+                "\tp.description as description,\n" +
+                "\tp.image as image,\n" +
+                "\tp.category_id as category_id,\n" +
+                "\tp.seller_id as seller_id,\n" +
+                "\tsum(OD.quantity) as amount,\n" +
+                "\tp.status as status,\n" +
+                "\tp.brand_id as brand_id\n" +
+                "from Products as P, OrderDetails as OD, Orders as o\n" +
+                "where P.id=OD.product_id and o.status!=4 \n" +
+                "\tand o.id = OD.order_id and o.seller_id=? \n" +
+                "group by p.id, p.name, p.price, \n" +
+                "\tp.description, p.image, p.category_id,\n" +
+                "\tp.status, p.brand_id, p.seller_id\n" +
+                "order by sum(OD.quantity) desc";
+        return query(sql, new ProductMapper(), seller_id);
+    }
 }

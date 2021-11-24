@@ -17,4 +17,6 @@ public interface IProductDAO {
     void update(Product product);
 
     void delete(int id);
+
+    List<Product> findTopSelling(int seller_id);
 }

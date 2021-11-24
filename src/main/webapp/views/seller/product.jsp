@@ -72,7 +72,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <fmt:setLocale value="fr_CA"/>
+<%--                                <fmt:setLocale value="fr_CA"/>--%>
                                 <c:forEach items="${products}" var="pro" varStatus="STT">
                                     <tr>
                                         <td>${STT.index+1}</td>

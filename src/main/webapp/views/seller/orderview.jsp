@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
-<fmt:setLocale value="fr_CA"/>
+<%--<fmt:setLocale value="fr_CA"/>--%>
 <head>
     <title>Order Details</title>
     <!-- BEGIN PAGE LEVEL STYLES -->
@@ -178,7 +178,9 @@
                                                         <c:forEach items="${ordersDetails}" var="od" varStatus="STT">
                                                             <tr>
                                                                 <td>${STT.index + 1}</td>
-                                                                <td> ${od.getProductName()}</td>
+                                                                <td>
+                                                                    <a href="productedit?action=edit&id=${od.product_id}">${od.getProductName()}</a>
+                                                                </td>
                                                                 <td><fmt:formatNumber
                                                                         value="${od.getOriginalPrice()}"
                                                                         type="currency"
