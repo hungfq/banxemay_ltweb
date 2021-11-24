@@ -24,6 +24,7 @@
     <style type="text/css">
         #page-content {
             padding-top: 0px !important;
+            min-height: auto;
         }
     </style>
     <div class="page-content" id="page-content">
@@ -43,7 +44,8 @@
                                     class="fa fa-angle-left"></i> <span class="hidden-480">
 										Back </span>
                             </a>
-                            <button onclick="document.getElementById('btn-change').click();" class="btn green-haze btn-circle" type="submit">
+                            <button onclick="document.getElementById('btn-change').click();"
+                                    class="btn green-haze btn-circle" type="submit">
                                 <i class="fa fa-check"></i> Save
                             </button>
                         </div>
@@ -89,18 +91,18 @@
                                                     <div class="col-md-7 value">
                                                         <form id="order-status" method="post" action="orderview">
                                                             <%--   span class="label label-success"> ${order.getOrderStatus()} </span>--%>
-                                                            <select required style="width: 100%"
+                                                            <select required style="width:auto"
                                                                     class="table-group-action-input form-control"
                                                                     name="status">
                                                                 <c:forEach items="${orderStatuses}" var="status">
                                                                     <option ${status.id == order.status ? "selected" : ""}
-                                                                            value="${status.id}"
-                                                                    >${status.name}
+                                                                            value="${status.id}">
+                                                                            ${status.name}
                                                                     </option>
                                                                 </c:forEach>
                                                             </select>
-                                                                <input type="text" hidden name="id" value="${order.id}"/>
-                                                                <input id="btn-change" type="submit" hidden/>
+                                                            <input type="text" hidden name="id" value="${order.id}"/>
+                                                            <input id="btn-change" type="submit" hidden/>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -140,8 +142,9 @@
                                             <div class="portlet-body">
                                                 <div class="row static-info">
                                                     <div class="col-md-12 value">
-                                                        To: ${order.receiver}<br>Add: ${order.address}<br>
-                                                        T: ${order.phone}<br>
+                                                        ${order.receiver}<br>
+                                                        ${order.phone}<br>
+                                                        ${order.address}<br>
                                                     </div>
                                                 </div>
                                             </div>
@@ -163,6 +166,7 @@
                                                             class="table table-hover table-bordered table-striped">
                                                         <thead>
                                                         <tr>
+                                                            <th>No.</th>
                                                             <th>Product</th>
                                                             <th>Original Price</th>
                                                             <th>Price</th>
@@ -171,23 +175,26 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <c:forEach items="${ordersDetails}" var="od">
+                                                        <c:forEach items="${ordersDetails}" var="od" varStatus="STT">
                                                             <tr>
+                                                                <td>${STT.index + 1}</td>
                                                                 <td> ${od.getProductName()}</td>
-                                                                    <%--                                                                <td><span class="label label-sm label-success">--%>
-                                                                    <%--                                                                Available</span></td>--%>
                                                                 <td><fmt:formatNumber
                                                                         value="${od.getOriginalPrice()}"
                                                                         type="currency"
                                                                         maxFractionDigits="0"
                                                                         currencySymbol="VNĐ"/></td>
-                                                                <td><fmt:formatNumber value="${od.unit_price}"
-                                                                                      type="currency"
-                                                                                      maxFractionDigits="0"
-                                                                                      currencySymbol="VNĐ"/></td>
+                                                                <td><fmt:formatNumber
+                                                                        value="${od.unit_price}"
+                                                                        type="currency"
+                                                                        maxFractionDigits="0"
+                                                                        currencySymbol="VNĐ"/></td>
                                                                 <td>${od.quantity}</td>
-
-                                                                <td>${od.quantity * od.unit_price}</td>
+                                                                <td><fmt:formatNumber
+                                                                        value="${od.quantity * od.unit_price}"
+                                                                        type="currency"
+                                                                        maxFractionDigits="0"
+                                                                        currencySymbol="VNĐ"/></td>
                                                             </tr>
                                                         </c:forEach>
                                                         </tbody>

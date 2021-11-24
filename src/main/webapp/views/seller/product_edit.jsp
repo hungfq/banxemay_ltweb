@@ -61,7 +61,7 @@
                                 <div class="tab-pane active" id="tab_general">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Tên sản phẩm: <span
+                                            <label class="col-md-2 control-label">Product name: <span
                                                     class="required"> * </span>
                                             </label>
                                             <div class="col-md-10">
@@ -70,7 +70,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Mô tả:
+                                            <label class="col-md-2 control-label">Description:
                                                 <span class="required"> * </span>
                                             </label>
                                             <div class="col-md-10">
@@ -81,7 +81,7 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label">Giá: <span
+                                                    <label class="col-md-4 control-label">Price: <span
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
@@ -90,7 +90,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label">Tồn kho: <span
+                                                    <label class="col-md-4 control-label">Amount: <span
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
@@ -99,7 +99,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label">Loại sản phẩm: <span
+                                                    <label class="col-md-4 control-label">Category: <span
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
@@ -114,7 +114,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label">Thương hiệu: <span
+                                                    <label class="col-md-4 control-label">Brand: <span
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
@@ -129,7 +129,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-4 control-label">Trạng thái: <span
+                                                    <label class="col-md-4 control-label">Status: <span
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">

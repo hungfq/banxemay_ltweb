@@ -161,13 +161,7 @@ var Login = function() {
                     required: true,
                     email: true
                 },
-                address: {
-                    required: true
-                },
-                city: {
-                    required: true
-                },
-                country: {
+                phone: {
                     required: true
                 },
 

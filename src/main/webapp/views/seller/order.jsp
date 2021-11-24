@@ -65,15 +65,15 @@
                                    style="width: 100%">
                                 <thead>
                                 <tr>
-                                    <th>STT</th>
-                                    <th>Ngày đặt hàng</th>
-                                    <th>Tên KH</th>
-                                    <th>SĐT</th>
-                                    <th>Địa chỉ</th>
-                                    <th>Người nhận</th>
-                                    <th>Thanh toán</th>
-                                    <th>Trạng thái</th>
-                                    <th>Hành động</th>
+                                    <th>No.</th>
+                                    <th>Order day</th>
+                                    <th>Customer</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Receiver</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -90,7 +90,7 @@
                                         <td>${order.getOrderStatus()}</td>
                                         <td>
                                             <a href="orderview?action=view&id=${order.id}"
-                                               class="btn btn-primary">Chi tiết</a>
+                                               class="btn btn-primary">Detail</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

@@ -2,7 +2,6 @@
          pageEncoding="UTF-8" %>
 <!-- BEGIN FOOTER -->
 <div class="page-footer bg-grey-cararra">
-    <!-- 	<div class="page-footer-inner">2021 &copy; HUNGPQ</div> -->
     <div class="text-center">2021 &copy; HUNGPQ</div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>

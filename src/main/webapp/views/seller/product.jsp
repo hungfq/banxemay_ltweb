@@ -59,16 +59,16 @@
                                    style="width: 100%">
                                 <thead>
                                 <tr>
-                                    <th width="5%">STT</th>
-                                    <th width="10%">Ảnh</th>
-                                    <th width="10%">Tên</th>
-                                    <th width="10%">Giá</th>
-                                    <th width="15%">Mô tả</th>
-                                    <th width="10%">Loại</th>
-                                    <th width="10%">Thương hiệu</th>
-                                    <th width="3%">Tồn kho</th>
-                                    <th width="5%">Trạng thái</th>
-                                    <th width="12%">Hành động</th>
+                                    <th width="3%">No.</th>
+                                    <th width="10%">Image</th>
+                                    <th width="10%">Name</th>
+                                    <th width="10%">Price</th>
+                                    <th width="15%">Description</th>
+                                    <th width="10%">Category</th>
+                                    <th width="6%">Brand</th>
+                                    <th width="6%">Amount</th>
+                                    <th width="8%">Status</th>
+                                    <th width="12%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -90,10 +90,10 @@
                                         <td>${pro.status == 1 ? "Published" : "Unpublished"}</td>
                                         <td>
                                             <a class="btn btn-primary"
-                                               href="productedit?action=edit&id=${pro.id}">Sửa</a>
+                                               href="productedit?action=edit&id=${pro.id}">Edit</a>
 <%--                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>--%>
                                             <a class="btn btn-danger" href="product?action=delete&id=${pro.id}"
-                                               onclick="return confirm('Do you want to delete?');">Xóa</a>
+                                               onclick="return confirm('Do you want to delete?');">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
