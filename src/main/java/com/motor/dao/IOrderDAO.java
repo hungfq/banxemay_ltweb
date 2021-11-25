@@ -23,4 +23,6 @@ public interface IOrderDAO {
     List<User> findUserBySeller(int seller_id);
 
     int getRevenueBySellerInMonth(int seller_id, int month, int year);
+
+    int countOrderBySellerInMonth(int seller_id, int month, int year);
 }

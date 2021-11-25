@@ -24,4 +24,6 @@ public interface IOrderService {
 
     int getRevenueBySellerInMonth(int seller_id, int month, int year);
 
+    int countOrderBySellerInMonth(int seller_id, int month, int year);
+
 }

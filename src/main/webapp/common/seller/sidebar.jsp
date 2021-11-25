@@ -20,10 +20,6 @@
                 <h3>GENERAL</h3>
             </li>
 
-            <li class="${active==0 ? "active":""}"><a href="home"> <i
-                    class="icon-home"></i> <span class="title">Home</span>
-            </a></li>
-
             <li class="${active==1 ? "active":""}"><a href="dashboard">
                 <i class="icon-bar-chart"></i> <span class="title">Dashboard</span>
             </a></li>

@@ -38,7 +38,7 @@
                                 currencySymbol="VNĐ"/></div>
                         <div class="desc">Lifetime Sales</div>
                     </div>
-                    <a class="more" href="#"> View more <i
+                    <a class="more" href="order"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -52,7 +52,7 @@
                         <div class="number"> ${totalOrder} </div>
                         <div class="desc">Total Orders</div>
                     </div>
-                    <a class="more" href="#"> View more <i
+                    <a class="more" href="order"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -70,7 +70,7 @@
                                 currencySymbol="VNĐ"/></div>
                         <div class="desc">Average Orders</div>
                     </div>
-                    <a class="more" href="#"> View more <i
+                    <a class="more" href="order"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -180,11 +180,25 @@
                                 class="caption-subject font-red-sunglo bold uppercase">Revenue</span>
                             <span class="caption-helper">weekly stats...</span>
                         </div>
+                        <ul class="nav nav-tabs">
+                            <li><a href="#portlet_tab2" data-toggle="tab"
+                                   id="statistics_amounts_tab"> Orders </a></li>
+                            <li class="active">
+                                <a href="#portlet_tab1"
+                                   data-toggle="tab"> Revenue </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="portlet-body">
                         <div class="tab-content">
-                            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-                            <input type="hidden" id="revenue" value="${revenue}">
+                            <div class="tab-pane active" id="portlet_tab1">
+                                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                                <input type="hidden" id="revenue" value="${revenue}">
+                            </div>
+                            <div class="tab-pane" id="portlet_tab2">
+                                <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+                                <input type="hidden" id="orderCount" value="${orderCount}">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,10 +281,13 @@
             var b = num & 255;
             return 'rgb(' + r + ', ' + g + ', ' + b + ')';
         }
+
         var ren = document.getElementById("revenue").value;
+        var orderCount = document.getElementById("orderCount").value;
         var ren_data = JSON.parse(ren);
+        var orderCount_data = JSON.parse(orderCount);
         // alert(ren_data);
-        var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        var xValues = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct","Nov","Dec"];
         var ran_color = [];
         for (let i = 0; i < 12; i++
         ) {
@@ -284,6 +301,22 @@
                 datasets: [{
                     backgroundColor: ran_color,
                     data: ren_data
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: ""
+                }
+            }
+        });new Chart("myChart2", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: ran_color,
+                    data: orderCount_data
                 }]
             },
             options: {

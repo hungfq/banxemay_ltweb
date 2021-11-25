@@ -48,7 +48,6 @@ public class SecurityConfig {
 
         // Cấu hình cho vai trò "SELLER".
         List<String> sellerUrlPattern = new ArrayList<String>();
-        sellerUrlPattern.add("/seller/home");
         sellerUrlPattern.add("/seller/dashboard");
         sellerUrlPattern.add("/seller/order");
         sellerUrlPattern.add("/seller/orderview");

@@ -107,4 +107,13 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
         return count(sql, seller_id, month, year);
     }
 
+    @Override
+    public int countOrderBySellerInMonth(int seller_id, int month, int year) {
+        String sql = "select COUNT(id) as soluong\n" +
+                "from Orders \n" +
+                "where status!=4  and seller_id= ? \n" +
+                "\tand  MONTH(buy_date) = ? and YEAR(buy_date) = ?";
+        return count(sql, seller_id, month, year);
+    }
+
 }

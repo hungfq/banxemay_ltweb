@@ -60,7 +60,7 @@ public class LoginController extends HttpServlet {
         if (requestUri != null) {
             response.sendRedirect(requestUri);
         } else {
-            response.sendRedirect("/seller/home");
+            response.sendRedirect("/seller/dashboard");
         }
     }
 }
