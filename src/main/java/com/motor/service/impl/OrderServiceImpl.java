@@ -37,7 +37,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public int orderMoneyTotal(int seller_id) {
+    public long orderMoneyTotal(int seller_id) {
         return orderDAO.orderMoneyTotal(seller_id);
     }
 
@@ -52,7 +52,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public int getRevenueBySellerInMonth(int seller_id, int month, int year) {
+    public long getRevenueBySellerInMonth(int seller_id, int month, int year) {
         return orderDAO.getRevenueBySellerInMonth(seller_id, month, year);
     }
 

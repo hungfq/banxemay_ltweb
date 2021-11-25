@@ -16,13 +16,13 @@ public interface IOrderService {
 
     int countBySeller(int seller_id);
 
-    int orderMoneyTotal(int seller_id);
+    long orderMoneyTotal(int seller_id);
 
     int orderMoneyAverages(int seller_id);
 
     List<User> findUserBySeller(int seller_id);
 
-    int getRevenueBySellerInMonth(int seller_id, int month, int year);
+    long getRevenueBySellerInMonth(int seller_id, int month, int year);
 
     int countOrderBySellerInMonth(int seller_id, int month, int year);
 

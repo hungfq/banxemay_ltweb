@@ -42,28 +42,28 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
-    public int orderMoneyTotal(int seller_id) {
+    public long orderMoneyTotal(int seller_id) {
         String sql = "select sum(a.total) as average\n" +
                 "from (\n" +
-                "\tselect sum(a.money) as total\n" +
+                "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
                 "\tfrom\n" +
-                "\t\t(select o.id, quantity*unit_price as money\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint)  as money\n" +
                 "\t\tfrom OrderDetails as od, Orders as o\n" +
-                "\t\twhere od.order_id = o.id and o.status!=4 and o.seller_id = ?)\n" +
+                "\t\twhere od.order_id = o.id and o.seller_id=? and o.status!=4)\n" +
                 "\t\tas a\n" +
                 "\tgroup by a.id) as a";
-        return count(sql, seller_id);
+        return get(sql, seller_id);
     }
 
     @Override
     public int orderMoneyAverages(int seller_id) {
         String sql = "select AVG(a.total) as average\n" +
                 "from (\n" +
-                "\tselect sum(a.money) as total\n" +
+                "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
                 "\tfrom\n" +
-                "\t\t(select o.id, quantity*unit_price as money\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint)  as money\n" +
                 "\t\tfrom OrderDetails as od, Orders as o\n" +
-                "\t\twhere od.order_id = o.id and o.status != 4 and o.seller_id = ?)\n" +
+                "\t\twhere od.order_id = o.id and o.seller_id=? and o.status!=4)\n" +
                 "\t\tas a\n" +
                 "\tgroup by a.id) as a";
         return count(sql, seller_id);
@@ -78,11 +78,11 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
                 "\t0 as role_id, u.fullname as fullname, '' as image\n" +
                 "from Users as u, Orders as o,\n" +
                 "\t(\n" +
-                "\tselect a.id, sum(a.money) as total\n" +
+                "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
                 "\tfrom\n" +
-                "\t\t(select o.id, quantity*unit_price as money\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint)  as money\n" +
                 "\t\tfrom OrderDetails as od, Orders as o\n" +
-                "\t\twhere od.order_id = o.id and o.status!=4 and o.seller_id = ? )\n" +
+                "\t\twhere od.order_id = o.id and o.seller_id=? and o.status!=4)\n" +
                 "\t\tas a\n" +
                 "\tgroup by a.id\n" +
                 "\t) as b\n" +
@@ -93,18 +93,18 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
-    public int getRevenueBySellerInMonth(int seller_id, int month, int year) {
-        String sql = "select sum(a.total) as total\n" +
+    public long getRevenueBySellerInMonth(int seller_id, int month, int year) {
+        String sql = "select sum(a.total) as average\n" +
                 "from (\n" +
-                "\tselect sum(a.money) as total\n" +
+                "\tselect cast(sum(a.money)as bigint) as total\n" +
                 "\tfrom\n" +
-                "\t\t(select o.id, quantity*unit_price as money\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint) as money\n" +
                 "\t\tfrom OrderDetails as od, Orders as o\n" +
                 "\t\twhere od.order_id = o.id and o.status!=4\n" +
-                "\t\tand o.seller_id= ? and MONTH(o.buy_date) = ? and YEAR(o.buy_date) = ?)\n" +
+                "\t\tand o.seller_id=? and MONTH(o.buy_date) = ? and YEAR(o.buy_date) = ?)\n" +
                 "\t\tas a\n" +
                 "\tgroup by a.id) as a";
-        return count(sql, seller_id, month, year);
+        return get(sql, seller_id, month, year);
     }
 
     @Override

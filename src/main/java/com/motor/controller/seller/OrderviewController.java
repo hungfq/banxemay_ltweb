@@ -38,7 +38,7 @@ public class OrderviewController extends HttpServlet {
         Order order = new Order();
 
         List<OrderDetail> ordersDetails = null;
-        int total = 0;
+        long total = 0;
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("loginedUser");
 
@@ -53,7 +53,7 @@ public class OrderviewController extends HttpServlet {
             }
             ordersDetails = orderDetailService.findAllByOrderId(order.getId());
             for (OrderDetail od : ordersDetails) {
-                total += od.getQuantity() * od.getUnit_price();
+                total +=  od.getQuantity() * (long)od.getUnit_price();
             }
         } else if (ac.equals("")) {
             resp.sendRedirect("order");

@@ -38,13 +38,13 @@ public class DashboardController extends HttpServlet {
         User user = (User) session.getAttribute("loginedUser");
         List<Product> topSelling = productService.findTopSelling(user.getId());
         int totalOrder = orderService.countBySeller(user.getId());
-        int orderMoneyTotal = orderService.orderMoneyTotal(user.getId());
+        long orderMoneyTotal = orderService.orderMoneyTotal(user.getId());
         int orderMoneyAverages = orderService.orderMoneyAverages(user.getId());
         List<User> users = orderService.findUserBySeller(user.getId());
 
         int year = Calendar.getInstance().get(Calendar.YEAR);
         Gson gson = new Gson();
-        List<Integer> revenue = new ArrayList<Integer>();
+        List<Long> revenue = new ArrayList<Long>();
         List<Integer> orderCount = new ArrayList<Integer>();
         for (int month = 0; month <= 12; month++) {
              revenue.add(orderService.getRevenueBySellerInMonth(user.getId(), month, year));
