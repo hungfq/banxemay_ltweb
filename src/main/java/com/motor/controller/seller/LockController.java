@@ -28,7 +28,7 @@ public class LockController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
 
-        resp.sendRedirect("seller/home");
+        resp.sendRedirect("seller/dashboard");
     }
 
 }

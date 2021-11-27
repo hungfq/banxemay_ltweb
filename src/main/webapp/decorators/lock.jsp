@@ -57,7 +57,7 @@
 <body>
 <div class="page-lock">
     <div class="page-logo">
-        <a class="brand" href="seller/home"> <img
+        <a class="brand" href="seller/dashboard"> <img
                 src="<c:url value="/templates/assets/admin/layout2/img/logo-big.png"/>" alt="logo"/>
         </a>
     </div>
