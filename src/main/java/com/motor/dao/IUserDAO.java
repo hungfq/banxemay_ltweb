@@ -11,4 +11,9 @@ public interface IUserDAO {
 
     User login(String username, String password);
 
+    void updateInfo(User user);
+
+    void updateImage(User user);
+
+    void updatePassword(User user);
 }

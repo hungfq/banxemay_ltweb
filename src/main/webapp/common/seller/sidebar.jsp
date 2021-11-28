@@ -15,6 +15,7 @@
         <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <ul class="page-sidebar-menu page-sidebar-menu-hover-submenu1"
             data-keep-expanded="false" data-auto-scroll="true"
+            id="sidebar-menu-seller"
             data-slide-speed="200">
             <li class="heading">
                 <h3>GENERAL</h3>
@@ -36,7 +37,11 @@
             <li class="${active==5 ? "active":"" }"><a href="productedit?action=add"> <i
                     class="icon-pencil"></i> <span class="title">Products edit</span>
             </a></li>
-
+            <c:if test="${active==6}">
+                <li class="active"><a href="#"> <i
+                        class="icon-pencil"></i> <span class="title">Profile</span>
+                </a></li>
+            </c:if>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

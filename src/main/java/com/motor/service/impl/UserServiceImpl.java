@@ -25,4 +25,19 @@ public class UserServiceImpl implements IUserService {
     public User login(String username, String password) {
         return userDAO.login(username, password);
     }
+
+    @Override
+    public void updateInfo(User user) {
+        userDAO.updateInfo(user);
+    }
+
+    @Override
+    public void updateImage(User user) {
+        userDAO.updateImage(user);
+    }
+
+    @Override
+    public void updatePassword(User user) {
+        userDAO.updatePassword(user);
+    }
 }

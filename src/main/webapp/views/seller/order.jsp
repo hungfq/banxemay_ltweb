@@ -20,28 +20,6 @@
         }
     </style>
     <div class="page-content" id="page-content">
-        <!-- BEGIN PAGE HEAD -->
-        <%--        <div class="page-head">--%>
-        <%--            <!-- BEGIN PAGE TITLE -->--%>
-        <%--            <div class="page-title">--%>
-        <%--                <h1>--%>
-        <%--                    Orders <small>statistics & reports</small>--%>
-        <%--                </h1>--%>
-        <%--            </div>--%>
-        <%--            <!-- END PAGE TITLE -->--%>
-
-        <%--            &lt;%&ndash; <%@include file="/common/seller/toolbar.jsp"%> &ndash;%&gt;--%>
-
-        <%--        </div>--%>
-        <%--        <!-- END PAGE HEAD -->--%>
-        <%--        <!-- BEGIN PAGE BREADCRUMB -->--%>
-        <%--        <ul class="page-breadcrumb breadcrumb">--%>
-        <%--            <li><a href="#">Home</a><i class="fa fa-circle"></i></li>--%>
-        <%--            <li><a href="#">Features</a><i class="fa fa-circle"></i></li>--%>
-        <%--            <li class="active">Order</li>--%>
-        <%--        </ul>--%>
-        <%--        <!-- END PAGE BREADCRUMB -->--%>
-
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">

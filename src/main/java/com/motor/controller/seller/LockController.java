@@ -1,10 +1,13 @@
 package com.motor.controller.seller;
 
+import com.motor.model.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/lock")
@@ -28,7 +31,15 @@ public class LockController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
 
-        resp.sendRedirect("seller/dashboard");
+        HttpSession session = req.getSession();
+        User user = (User) session.getAttribute("loginedUser");
+
+        String password = req.getParameter("password");
+        if (user.getPassword().equals(password))
+            resp.sendRedirect("seller/dashboard");
+        else {
+            resp.sendRedirect("lock");
+        }
     }
 
 }
