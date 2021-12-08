@@ -18,7 +18,7 @@ public interface IOrderService {
 
     long orderMoneyTotal(int seller_id);
 
-    int orderMoneyAverages(int seller_id);
+    long orderMoneyAverages(int seller_id);
 
     List<User> findUserBySeller(int seller_id);
 

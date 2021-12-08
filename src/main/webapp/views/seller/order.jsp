@@ -135,7 +135,8 @@
 
         $('#example').DataTable({
             dom: 'Bfrtip',
-            buttons: ['copy', 'excel', 'pdf', 'print']
+            buttons: ['copy', 'excel', 'pdf', 'print'],
+            "aaSorting": [1,'desc']
         });
     </script>
 </content>

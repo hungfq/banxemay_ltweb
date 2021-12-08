@@ -42,7 +42,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public int orderMoneyAverages(int seller_id) {
+    public long orderMoneyAverages(int seller_id) {
         return orderDAO.orderMoneyAverages(seller_id);
     }
 

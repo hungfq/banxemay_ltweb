@@ -39,7 +39,7 @@ public class DashboardController extends HttpServlet {
         List<Product> topSelling = productService.findTopSelling(user.getId());
         int totalOrder = orderService.countBySeller(user.getId());
         long orderMoneyTotal = orderService.orderMoneyTotal(user.getId());
-        int orderMoneyAverages = orderService.orderMoneyAverages(user.getId());
+        long orderMoneyAverages = orderService.orderMoneyAverages(user.getId());
         List<User> users = orderService.findUserBySeller(user.getId());
 
         int year = Calendar.getInstance().get(Calendar.YEAR);

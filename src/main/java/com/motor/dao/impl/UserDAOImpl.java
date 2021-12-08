@@ -22,6 +22,20 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     }
 
     @Override
+    public User findOneWithUsername(String username) {
+        String sql = "select * from Users where username = ?";
+        List<User> users = query(sql, new UserMapper(), username);
+        return users.isEmpty() ? null : users.get(0);
+    }
+
+    @Override
+    public User findOneWithEmail(String email) {
+        String sql = "select * from Users where mail = ?";
+        List<User> users = query(sql, new UserMapper(), email);
+        return users.isEmpty() ? null : users.get(0);
+    }
+
+    @Override
     public User login(String username, String password) {
         String sql = "select * from Users where username = ? and password = ?";
         List<User> users = query(sql, new UserMapper(), username, password);
@@ -51,6 +65,15 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
                 "SET [password] = ?" +
                 " WHERE [id] = ?;";
         update(sql, user.getPassword(), user.getId());
+    }
+
+    @Override
+    public Long insertSeller(User user) {
+        String sql = "INSERT INTO [dbo].[Users] " +
+                "([username], [password], [mail], [phone], [role_id], [fullname], [image]) " +
+                "VALUES ( ?, ?, ?, ?, 2, ?, NULL);";
+        return insert(sql, user.getUsername(), user.getPassword(), user.getMail(),
+                user.getPhone(), user.getfullname());
     }
 
 }

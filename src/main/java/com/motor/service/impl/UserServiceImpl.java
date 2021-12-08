@@ -22,6 +22,16 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public User findOneWithUsername(String username) {
+        return userDAO.findOneWithUsername(username);
+    }
+
+    @Override
+    public User findOneWithEmail(String email) {
+        return userDAO.findOneWithEmail(email);
+    }
+
+    @Override
     public User login(String username, String password) {
         return userDAO.login(username, password);
     }
@@ -40,4 +50,10 @@ public class UserServiceImpl implements IUserService {
     public void updatePassword(User user) {
         userDAO.updatePassword(user);
     }
+
+    @Override
+    public Long insertSeller(User user) {
+        return userDAO.insertSeller(user);
+    }
+
 }

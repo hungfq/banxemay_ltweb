@@ -56,7 +56,7 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
-    public int orderMoneyAverages(int seller_id) {
+    public long orderMoneyAverages(int seller_id) {
         String sql = "select AVG(a.total) as average\n" +
                 "from (\n" +
                 "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
@@ -65,8 +65,8 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
                 "\t\tfrom OrderDetails as od, Orders as o\n" +
                 "\t\twhere od.order_id = o.id and o.seller_id=? and o.status!=4)\n" +
                 "\t\tas a\n" +
-                "\tgroup by a.id) as a";
-        return count(sql, seller_id);
+                "\tgroup by a.id) as a\n";
+        return get(sql, seller_id);
     }
 
     @Override

@@ -66,12 +66,20 @@
 </div>
 <!-- BEGIN LOGIN -->
 <div class="content">
+    <div class="alert alert-danger ${param.errorMessage == null ? "display-hide" : ""}">
+        <button class="close" data-close="alert"></button>
+        <span> ${param.errorMessage} </span>
+    </div>
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="login" method="post">
         <h3 class="form-title">Sign In</h3>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
             <span> Enter any username and password. </span>
+        </div>
+         <div class="alert alert-danger ${errorMessage == null ? "display-hide" : ""}">
+            <button class="close" data-close="alert"></button>
+            <span> ${errorMessage}  </span>
         </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
@@ -88,24 +96,10 @@
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-success uppercase">Login</button>
-            <label class="rememberme check"> <input type="checkbox"
-                                                    name="remember" value="1"/>Remember
             </label> <a href="javascript:;" id="forget-password" class="forget-password">Forgot
             Password?</a>
         </div>
-        <div class="login-options">
-            <h4>Or login with</h4>
-            <ul class="social-icons">
-                <li><a class="social-icon-color facebook"
-                       data-original-title="facebook" href="#"></a></li>
-                <li><a class="social-icon-color twitter"
-                       data-original-title="Twitter" href="#"></a></li>
-                <li><a class="social-icon-color googleplus"
-                       data-original-title="Goole Plus" href="#"></a></li>
-                <li><a class="social-icon-color linkedin"
-                       data-original-title="Linkedin" href="#"></a></li>
-            </ul>
-        </div>
+
         <div class="create-account">
             <p>
                 <a href="javascript:;" id="register-btn" class="uppercase">Create
@@ -115,7 +109,7 @@
     </form>
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
-    <form class="forget-form" action="#" method="post">
+    <form class="forget-form" action="forget" method="post">
         <h3>Forget Password ?</h3>
         <p>Enter your e-mail address below to reset your password.</p>
         <div class="form-group">
@@ -129,7 +123,7 @@
     </form>
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
-    <form class="register-form" action="#" method="post">
+    <form class="register-form" action="register" method="post">
         <h3>Sign Up</h3>
         <p class="hint">Enter your personal details below:</p>
         <div class="form-group">

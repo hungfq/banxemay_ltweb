@@ -9,6 +9,10 @@ public interface IUserDAO {
 
     User findOne(int id);
 
+    User findOneWithUsername(String username);
+
+    User findOneWithEmail(String email);
+
     User login(String username, String password);
 
     void updateInfo(User user);
@@ -16,4 +20,6 @@ public interface IUserDAO {
     void updateImage(User user);
 
     void updatePassword(User user);
+
+    Long insertSeller(User user);
 }
