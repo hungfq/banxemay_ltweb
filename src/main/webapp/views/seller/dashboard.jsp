@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
 <head>
+    <title>Dashboard</title>
     <%@include file="/common/seller/theme.jsp" %>
 </head>
 <body>
@@ -36,7 +37,7 @@
                                 type="currency"
                                 maxFractionDigits="0"
                                 currencySymbol="VNĐ"/></div>
-                        <div class="desc">Lifetime Sales</div>
+                        <div class="desc">Total value of orders</div>
                     </div>
                     <a class="more" href="order"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
@@ -50,7 +51,7 @@
                     </div>
                     <div class="details">
                         <div class="number"> ${totalOrder} </div>
-                        <div class="desc">Total Orders</div>
+                        <div class="desc">Number of orders</div>
                     </div>
                     <a class="more" href="order"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
@@ -84,7 +85,7 @@
                         <div class="caption">
                             <i class="icon-bar-chart font-green-sharp"></i> <span
                                 class="caption-subject font-green-sharp bold uppercase">Overview</span>
-                            <span class="caption-helper">weekly stats...</span>
+                            <span class="caption-helper">general stats...</span>
                         </div>
                         <div class="tools">
                             <a href="javascript:;" class="collapse"> </a> <a
@@ -174,22 +175,31 @@
             <div class="col-md-6">
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
-                    <div class="portlet-title tabbable-line">
+                    <div class="portlet-title">
                         <div class="caption">
                             <i class="icon-share font-red-sunglo"></i> <span
-                                class="caption-subject font-red-sunglo bold uppercase">Revenue</span>
-                            <span class="caption-helper">weekly stats...</span>
+                                class="caption-subject font-red-sunglo bold uppercase">Revenue and sales</span>
+                            <span class="caption-helper">monthly stats...</span>
                         </div>
-                        <ul class="nav nav-tabs">
-                            <li><a href="#portlet_tab2" data-toggle="tab"
-                                   id="statistics_amounts_tab"> Orders </a></li>
-                            <li class="active">
-                                <a href="#portlet_tab1"
-                                   data-toggle="tab"> Revenue </a>
-                            </li>
-                        </ul>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse"> </a> <a
+                                href="#portlet-config" data-toggle="modal" class="config">
+                        </a> <a href="javascript:;" class="reload"> </a> <a
+                                href="javascript:;" class="fullscreen"> </a> <a
+                                href="javascript:;" class="remove"> </a>
+                        </div>
                     </div>
                     <div class="portlet-body">
+                        <div class="tabbable-line pull-right">
+                            <ul class="nav nav-tabs">
+                                <li><a href="#portlet_tab2" data-toggle="tab"
+                                       id="statistics_amounts_tab"> Orders </a></li>
+                                <li class="active">
+                                    <a href="#portlet_tab1"
+                                       data-toggle="tab"> Revenue </a>
+                                </li>
+                            </ul>
+                        </div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="portlet_tab1">
                                 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>

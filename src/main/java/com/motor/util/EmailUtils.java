@@ -8,11 +8,11 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-public class EmailUtil {
+public class EmailUtils {
 
     private final String userEmail;
 
-    public EmailUtil(String userEmail) {
+    public EmailUtils(String userEmail) {
         this.userEmail = userEmail;
     }
 
