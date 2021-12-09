@@ -88,13 +88,16 @@ public class ProductEditController extends HttpServlet {
         Product product = new Product(id, name, price, description,
                 image, categories, seller_id, amount, status, brand);
 
+        String msg;
+
         if (action.equals("edit")) {
             productService.update(product);
-
+            msg = "Update product successfully";
         } else {
             productService.insert(product);
+            msg = "Add product successfully";
         }
-        resp.sendRedirect("product");
+        resp.sendRedirect("product?msg=" + msg);
 
 
     }

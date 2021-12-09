@@ -33,8 +33,8 @@ public class ForgetPasswordController extends HttpServlet {
             existingEmail.setPassword(newPassword);
             userService.updatePassword(existingEmail);
             EmailUtil mailSender = new EmailUtil(email);
-            mailSender.sendMail("Your password is: " + newPassword  +
-                    "<br/> Please change your password after login");
+            mailSender.sendMail("Please change your password after login.\n" +
+                    "Your password is: " + newPassword  );
         }
         resp.sendRedirect("login?errorMessage=" + errorMessage);
     }

@@ -23,12 +23,10 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
-                <%--                <div class="note note-danger note-bordered">--%>
-                <%--                    <p>NOTE: The below datatable is not connected to a real--%>
-                <%--                        database so the filter and sorting is just simulated for demo--%>
-                <%--                        purposes only.</p>--%>
-                <%--                </div>--%>
-                <!-- Begin: life time stats -->
+                <div class="alert alert-warning ${param.msg == null ? "display-hide" : ""}">
+                    <button class="close" data-close="alert"></button>
+                    <span> <c:out value="${param.msg}" />  </span>
+                </div>
                 <div class="portlet light">
                     <div class="portlet-title">
                         <div class="caption">

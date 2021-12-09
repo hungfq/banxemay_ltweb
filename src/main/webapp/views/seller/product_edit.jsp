@@ -85,7 +85,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control" required
+                                                        <input type="number" min="0"  class="form-control" required
                                                                value="${product.price}" name="price" placeholder="">
                                                     </div>
                                                 </div>
@@ -94,7 +94,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <input type="text" class="form-control" required
+                                                        <input type="number" min="0" class="form-control" required
                                                                value="${product.amount}" name="amount" placeholder="">
                                                     </div>
                                                 </div>

@@ -66,9 +66,9 @@
 </div>
 <!-- BEGIN LOGIN -->
 <div class="content">
-    <div class="alert alert-danger ${param.errorMessage == null ? "display-hide" : ""}">
+    <div class="alert alert-warning ${param.errorMessage == null ? "display-hide" : ""}">
         <button class="close" data-close="alert"></button>
-        <span> ${param.errorMessage} </span>
+        <span> <c:out value="${param.errorMessage}"/>  </span>
     </div>
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="login" method="post">
@@ -77,9 +77,9 @@
             <button class="close" data-close="alert"></button>
             <span> Enter any username and password. </span>
         </div>
-         <div class="alert alert-danger ${errorMessage == null ? "display-hide" : ""}">
+        <div class="alert alert-danger ${errorMessage == null ? "display-hide" : ""}">
             <button class="close" data-close="alert"></button>
-            <span> ${errorMessage}  </span>
+            <span> <c:out value="${errorMessage}"/> </span>
         </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->

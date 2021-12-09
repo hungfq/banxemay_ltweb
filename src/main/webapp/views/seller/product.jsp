@@ -26,6 +26,10 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
+                <div class="alert alert-warning ${param.msg == null ? "display-hide" : ""}">
+                    <button class="close" data-close="alert"></button>
+                    <span> <c:out value="${param.msg}" />  </span>
+                </div>
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
                     <div class="portlet-title">
@@ -72,7 +76,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-<%--                                <fmt:setLocale value="fr_CA"/>--%>
+                                <%--                                <fmt:setLocale value="fr_CA"/>--%>
                                 <c:forEach items="${products}" var="pro" varStatus="STT">
                                     <tr>
                                         <td>${STT.index+1}</td>
@@ -91,7 +95,7 @@
                                         <td>
                                             <a class="btn btn-primary"
                                                href="productedit?action=edit&id=${pro.id}">Edit</a>
-<%--                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>--%>
+                                                <%--                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>--%>
                                             <a class="btn btn-danger" href="product?action=delete&id=${pro.id}"
                                                onclick="return confirm('Do you want to delete?');">Delete</a>
                                         </td>
