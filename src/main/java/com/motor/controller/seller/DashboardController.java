@@ -44,16 +44,15 @@ public class DashboardController extends HttpServlet {
 
         int year = Calendar.getInstance().get(Calendar.YEAR);
         Gson gson = new Gson();
-        List<Long> revenue = new ArrayList<Long>();
-        List<Integer> orderCount = new ArrayList<Integer>();
+        List<Long> revenue = new ArrayList<>();
+        List<Integer> orderCount = new ArrayList<>();
         for (int month = 0; month <= 12; month++) {
-             revenue.add(orderService.getRevenueBySellerInMonth(user.getId(), month, year));
-             orderCount.add(orderService.countOrderBySellerInMonth(user.getId(), month, year));
+            revenue.add(orderService.getRevenueBySellerInMonth(user.getId(), month, year));
+            orderCount.add(orderService.countOrderBySellerInMonth(user.getId(), month, year));
         }
-//        System.out.println(gson.toJson(orderCount));
-//        System.out.println(revenue);
-        req.setAttribute("orderCount",gson.toJson(orderCount));
-        req.setAttribute("revenue",gson.toJson(revenue));
+
+        req.setAttribute("orderCount", gson.toJson(orderCount));
+        req.setAttribute("revenue", gson.toJson(revenue));
         req.setAttribute("users", users);
         req.setAttribute("orderMoneyAverages", orderMoneyAverages);
         req.setAttribute("orderMoneyTotal", orderMoneyTotal);

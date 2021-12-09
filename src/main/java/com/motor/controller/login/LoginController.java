@@ -50,11 +50,11 @@ public class LoginController extends HttpServlet {
 
         AppUtils.storeLoginedUser(request.getSession(), userAccount);
 
-        //
         int redirectId = -1;
         try {
             redirectId = Integer.parseInt(request.getParameter("redirectId"));
         } catch (Exception e) {
+            System.out.println();
         }
         String requestUri = AppUtils.getRedirectAfterLoginUrl(request.getSession(), redirectId);
         if (requestUri != null) {

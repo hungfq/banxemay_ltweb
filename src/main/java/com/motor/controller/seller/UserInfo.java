@@ -46,38 +46,44 @@ public class UserInfo extends HttpServlet {
         int id = user.getId();
 
         String action = req.getParameter("action");
-        if (action.equals("info")) {
-            String phone = req.getParameter("phone");
-            String email = req.getParameter("email");
-            String fullname = req.getParameter("fullname");
-            User newUser = new User();
-            newUser.setId(id);
-            newUser.setPhone(phone);
-            newUser.setMail(email);
-            newUser.setfullname(fullname);
-            userService.updateInfo(newUser);
-
-        } else if (action.equals("image")) {
-            String image = req.getParameter("image");
-            User newUser = new User();
-            newUser.setId(id);
-            newUser.setImage(image);
-            userService.updateImage(newUser);
-        } else if (action.equals("password")) {
-            String oldPassword = req.getParameter("oldPassword");
-            String password = req.getParameter("password");
-            if (oldPassword.equals(user.getPassword())) {
+        switch (action) {
+            case "info": {
+                String phone = req.getParameter("phone");
+                String email = req.getParameter("email");
+                String fullname = req.getParameter("fullname");
                 User newUser = new User();
                 newUser.setId(id);
-                newUser.setPassword(password);
-                userService.updatePassword(newUser);
+                newUser.setPhone(phone);
+                newUser.setMail(email);
+                newUser.setfullname(fullname);
+                userService.updateInfo(newUser);
+
+                break;
             }
-            else {
-                resp.sendRedirect("/error");
-                return;
+            case "image": {
+                String image = req.getParameter("image");
+                User newUser = new User();
+                newUser.setId(id);
+                newUser.setImage(image);
+                userService.updateImage(newUser);
+                break;
             }
-        } else {
-            resp.sendRedirect("userinfo?id=" + String.valueOf(id));
+            case "password":
+                String oldPassword = req.getParameter("oldPassword");
+                String password = req.getParameter("password");
+                if (oldPassword.equals(user.getPassword())) {
+                    User newUser = new User();
+                    newUser.setId(id);
+                    newUser.setPassword(password);
+                    userService.updatePassword(newUser);
+                } else {
+                    resp.sendRedirect("/error");
+                    return;
+                }
+                break;
+            default:
+                resp.sendRedirect("userinfo?id=" + id);
+                break;
         }
         resp.sendRedirect("/logout");
     }

@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
 public class UserRoleRequestWrapper extends HttpServletRequestWrapper {
-  private String user;
-  private List<String> roles = null;
-  private HttpServletRequest realRequest;
+  private final String user;
+  private final List<String> roles;
+  private final HttpServletRequest realRequest;
 
   public UserRoleRequestWrapper(String user, List<String> roles, HttpServletRequest request) {
     super(request);
@@ -32,12 +32,7 @@ public class UserRoleRequestWrapper extends HttpServletRequestWrapper {
     }
 
     // Make an anonymous implementation to just return our user
-    return new Principal() {
-      @Override
-      public String getName() {
-        return user;
-      }
-    };
+    return () -> user;
   }
 
 }

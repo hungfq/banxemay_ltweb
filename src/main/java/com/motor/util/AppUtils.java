@@ -9,8 +9,8 @@ import javax.servlet.http.HttpSession;
 public class AppUtils {
     private static int REDIRECT_ID = 0;
 
-    private static final Map<Integer, String> id_uri_map = new HashMap<Integer, String>();
-    private static final Map<String, Integer> uri_id_map = new HashMap<String, Integer>();
+    private static final Map<Integer, String> id_uri_map = new HashMap<>();
+    private static final Map<String, Integer> uri_id_map = new HashMap<>();
 
     // Lưu trữ thông tin người dùng vào Session.
     public static void storeLoginedUser(HttpSession session, User loginedUser) {
@@ -20,8 +20,7 @@ public class AppUtils {
 
     // Lấy thông tin người dùng lưu trữ trong Session.
     public static User getLoginedUser(HttpSession session) {
-        User loginedUser = (User) session.getAttribute("loginedUser");
-        return loginedUser;
+        return (User) session.getAttribute("loginedUser");
     }
 
     public static int storeRedirectAfterLoginUrl(HttpSession session, String requestUri) {

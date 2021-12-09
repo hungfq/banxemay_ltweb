@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Random;
-import java.util.stream.Collectors;
+
 
 
 @WebServlet("/register")
@@ -20,11 +19,6 @@ public class RegisterController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        EmailUtil mailSender = new EmailUtil("t.hungpham2314@gmail.com");
-//        mailSender.sendMail("Your password is......");
-//        String password = new Random().ints(10, 33, 122)
-//                .mapToObj(i -> String.valueOf((char) i)).collect(Collectors.joining());
-//        System.out.println(password);
 
     }
 

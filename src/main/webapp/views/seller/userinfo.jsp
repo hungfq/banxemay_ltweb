@@ -23,6 +23,11 @@
         <div class="profile-content">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="note note-danger note-bordered">
+                        <p>
+                            NOTE: You must sign in again after making the change. That's completely automatic.
+                        </p>
+                    </div>
                     <div class="portlet light">
                         <div class="portlet-title tabbable-line">
                             <div class="caption caption-md">

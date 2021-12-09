@@ -7,7 +7,7 @@ import com.motor.model.Brand;
 
 import java.util.List;
 
-public class BrandDAOImpl extends AbstractDAO implements IBrandDAO {
+public class BrandDAOImpl extends AbstractDAO<Brand> implements IBrandDAO {
     @Override
     public List<Brand> findAll() {
         String sql = "select * from Brands";

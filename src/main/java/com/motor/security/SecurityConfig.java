@@ -14,7 +14,7 @@ public class SecurityConfig {
 
     // String: Role
     // List<String>: urlPatterns.
-    private static final Map<String, List<String>> mapConfig = new HashMap<String, List<String>>();
+    private static final Map<String, List<String>> mapConfig = new HashMap<>();
 
     static {
         init();
@@ -23,7 +23,7 @@ public class SecurityConfig {
     private static void init() {
 
         // Cấu hình cho vai trò "ADMIN".
-        List<String> adminUrlPattern = new ArrayList<String>();
+        List<String> adminUrlPattern = new ArrayList<>();
         adminUrlPattern.add("/admin");
         adminUrlPattern.add("/admin/product");
         adminUrlPattern.add("/admin/product/edit");
@@ -47,7 +47,7 @@ public class SecurityConfig {
         mapConfig.put(ROLE_ADMIN, adminUrlPattern);
 
         // Cấu hình cho vai trò "SELLER".
-        List<String> sellerUrlPattern = new ArrayList<String>();
+        List<String> sellerUrlPattern = new ArrayList<>();
         sellerUrlPattern.add("/seller/dashboard");
         sellerUrlPattern.add("/seller/order");
         sellerUrlPattern.add("/seller/orderview");
@@ -56,7 +56,7 @@ public class SecurityConfig {
         mapConfig.put(ROLE_SELLER, sellerUrlPattern);
 
         // Cấu hình cho vai trò "CUSTOMER".
-        List<String> cusUrlPattern = new ArrayList<String>();
+        List<String> cusUrlPattern = new ArrayList<>();
         cusUrlPattern.add("/checkout");
         mapConfig.put(ROLE_CUSTOMER, cusUrlPattern);
     }
