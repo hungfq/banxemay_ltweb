@@ -42,13 +42,6 @@
 							<li><a href="userinfo?id=${sessionScope.loginedUser.id}"> <i class="icon-user"></i>
 									My Profile
 							</a></li>
-							<%--<li><a href="inbox"> <i class="icon-envelope-open"></i>
-									My Inbox <span class="badge badge-danger"> 3 </span>
-							</a></li>--%>
-							<li class="divider"></li>
-							<li><a href="../lock"> <i class="icon-lock"></i>
-									Lock Screen
-							</a></li>
 							<li><a href="../logout"> <i class="icon-key"></i>
 								${sessionScope.loginedUser != null ? "Log Out" : "Log In"}
 							</a></li>
