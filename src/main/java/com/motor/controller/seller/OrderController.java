@@ -17,6 +17,7 @@ import java.util.List;
 @WebServlet(urlPatterns = {"/seller/order"})
 public class OrderController extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    IOrderService orderService = new OrderServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +26,7 @@ public class OrderController extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
-        IOrderService orderService = new OrderServiceImpl();
+
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("loginedUser");
         List<Order> orders = orderService.findAllBySeller(user.getId());
