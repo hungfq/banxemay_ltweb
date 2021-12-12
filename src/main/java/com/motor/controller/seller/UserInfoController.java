@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/seller/userinfo")
-public class UserInfo extends HttpServlet {
+public class UserInfoController extends HttpServlet {
     IUserService userService = new UserServiceImpl();
 
     @Override
