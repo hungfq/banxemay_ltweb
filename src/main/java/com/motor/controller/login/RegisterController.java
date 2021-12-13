@@ -40,7 +40,7 @@ public class RegisterController extends HttpServlet {
 
         User user1 = new User(-1, username, password, fullname, mail, phone, role, image);
 
-        System.out.println(user1);
+//        System.out.println(user1);
 
         User existingUsername = userService.findOneWithUsername(username);
         User existingEmail = userService.findOneWithEmail(mail);

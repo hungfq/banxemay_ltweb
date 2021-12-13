@@ -42,9 +42,13 @@
             <li class="${active==7 ? "active":"" }"><a href="/admin/products"> <i
                     class="icon-handbag"></i> <span class="title">Products</span>
             </a></li>
-<%--            <li class="${active==8 ? "active":"" }"><a href="/admin/productedit?action=add"> <i--%>
-<%--                    class="icon-pencil"></i> <span class="title">Products edit</span>--%>
-<%--            </a></li>--%>
+            <li class="${active==8 ? "active":"" }"><a href="/admin/orders"> <i
+                    class="icon-basket"></i> <span class="title">Orders</span>
+            </a></li>
+            <li class="${active==9 ? "active":"" }"><a href="/admin/orderview"> <i
+                    class="icon-tag"></i> <span class="title">Orders view</span>
+            </a></li>
+
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>
