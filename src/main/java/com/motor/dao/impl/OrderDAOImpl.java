@@ -36,13 +36,33 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
+    public long countAll() {
+        String sql = "select count(id) from Orders";
+        return get(sql);
+    }
+
+    @Override
     public int countBySeller(int seller_id) {
         String sql = "select count(id) from Orders where seller_id = ?";
         return count(sql, seller_id);
     }
 
     @Override
-    public long orderMoneyTotal(int seller_id) {
+    public long orderMoneyTotal() {
+        String sql = "select sum(a.total) as average\n" +
+                "from (\n" +
+                "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
+                "\tfrom\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint)  as money\n" +
+                "\t\tfrom OrderDetails as od, Orders as o\n" +
+                "\t\twhere od.order_id = o.id and o.status!=4)\n" +
+                "\t\tas a\n" +
+                "\tgroup by a.id) as a";
+        return get(sql);
+    }
+
+    @Override
+    public long orderMoneyTotalBySeller(int seller_id) {
         String sql = "select sum(a.total) as average\n" +
                 "from (\n" +
                 "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
@@ -56,7 +76,7 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
-    public long orderMoneyAverages(int seller_id) {
+    public long orderMoneyAveragesBySeller(int seller_id) {
         String sql = "select AVG(a.total) as average\n" +
                 "from (\n" +
                 "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
@@ -67,6 +87,29 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
                 "\t\tas a\n" +
                 "\tgroup by a.id) as a\n";
         return get(sql, seller_id);
+    }
+
+    @Override
+    public List<User> findTopCustomer() {
+        String sql = "select top 7 u.id as id ,\n" +
+                "\t'' as username, '' as password,\n" +
+                "\tcast(count(o.id) as nvarchar) as mail , \n" +
+                "\tcast(sum(b.total)as nvarchar) as phone,\n" +
+                "\t0 as role_id, u.fullname as fullname, '' as image\n" +
+                "from Users as u, Orders as o,\n" +
+                "\t(\n" +
+                "\tselect a.id, cast(sum(a.money)as bigint) as total\n" +
+                "\tfrom\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint)  as money\n" +
+                "\t\tfrom OrderDetails as od, Orders as o\n" +
+                "\t\twhere od.order_id = o.id and o.status!=4)\n" +
+                "\t\tas a\n" +
+                "\tgroup by a.id\n" +
+                "\t) as b\n" +
+                "where u.id = o.customer_id and b.id=o.id\n" +
+                "group by u.id, u.fullname\n" +
+                "order by sum(b.total) desc";
+        return query(sql, new UserMapper());
     }
 
     @Override

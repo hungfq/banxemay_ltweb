@@ -17,6 +17,11 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public List<User> findAllSeller() {
+        return userDAO.findAllSeller();
+    }
+
+    @Override
     public User findOne(int id) {
         return userDAO.findOne(id);
     }
@@ -67,8 +72,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Long insertSeller(User user) {
-        return userDAO.insertSeller(user);
+    public int countCustomer() {
+        return userDAO.countCustomer();
     }
 
+    @Override
+    public int countSeller() {
+        return userDAO.countSeller();
+    }
 }

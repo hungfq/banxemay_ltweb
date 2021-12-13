@@ -14,11 +14,19 @@ public interface IOrderService {
 
     void updateStatus(Order order);
 
+    long countAll();
+
     int countBySeller(int seller_id);
 
-    long orderMoneyTotal(int seller_id);
+    long orderMoneyTotal();
 
-    long orderMoneyAverages(int seller_id);
+    long orderMoneyTotalBySeller(int seller_id);
+
+    long orderMoneyAveragesBySeller(int seller_id);
+
+    List<User> findTopCustomer();
+
+    List<User> findTopSeller();
 
     List<User> findUserBySeller(int seller_id);
 

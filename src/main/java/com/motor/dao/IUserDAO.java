@@ -7,6 +7,8 @@ import java.util.List;
 public interface IUserDAO {
     List<User> findAll();
 
+    List<User> findAllSeller();
+
     User findOne(int id);
 
     User findOneWithUsername(String username);
@@ -27,5 +29,9 @@ public interface IUserDAO {
 
     Long insert(User user);
 
-    Long insertSeller(User user);
+    int countCustomer();
+
+    int countSeller();
+
+
 }

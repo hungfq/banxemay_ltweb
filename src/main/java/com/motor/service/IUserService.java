@@ -7,6 +7,8 @@ import java.util.List;
 public interface IUserService {
     List<User> findAll();
 
+    List<User> findAllSeller();
+
     User findOne(int id);
 
     User findOneWithUsername(String username);
@@ -27,6 +29,7 @@ public interface IUserService {
 
     Long insert(User user);
 
-    Long insertSeller(User user);
+    int countCustomer();
 
+    int countSeller();
 }

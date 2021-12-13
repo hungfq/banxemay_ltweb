@@ -5,11 +5,13 @@ import com.motor.dao.impl.OrderDAOImpl;
 import com.motor.model.Order;
 import com.motor.model.User;
 import com.motor.service.IOrderService;
+import com.motor.service.IUserService;
 
 import java.util.List;
 
 public class OrderServiceImpl implements IOrderService {
     IOrderDAO orderDAO = new OrderDAOImpl();
+    IUserService userService = new UserServiceImpl();
 
     @Override
     public List<Order> findAll() {
@@ -32,18 +34,43 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public long countAll() {
+        return orderDAO.countAll();
+    }
+
+    @Override
     public int countBySeller(int seller_id) {
         return orderDAO.countBySeller(seller_id);
     }
 
     @Override
-    public long orderMoneyTotal(int seller_id) {
-        return orderDAO.orderMoneyTotal(seller_id);
+    public long orderMoneyTotal() {
+        return orderDAO.orderMoneyTotal();
     }
 
     @Override
-    public long orderMoneyAverages(int seller_id) {
-        return orderDAO.orderMoneyAverages(seller_id);
+    public long orderMoneyTotalBySeller(int seller_id) {
+        return orderDAO.orderMoneyTotalBySeller(seller_id);
+    }
+
+    @Override
+    public long orderMoneyAveragesBySeller(int seller_id) {
+        return orderDAO.orderMoneyAveragesBySeller(seller_id);
+    }
+
+    @Override
+    public List<User> findTopCustomer() {
+        return orderDAO.findTopCustomer();
+    }
+
+    @Override
+    public List<User> findTopSeller() {
+        List<User> sellers = userService.findAllSeller();
+        for (User seller : sellers) {
+            seller.setMail(String.valueOf(countBySeller(seller.getId())));
+            seller.setPhone(String.valueOf(orderMoneyTotalBySeller(seller.getId())));
+        }
+        return sellers;
     }
 
     @Override
@@ -58,7 +85,7 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public int countOrderBySellerInMonth(int seller_id, int month, int year) {
-        return orderDAO.countOrderBySellerInMonth(seller_id,month, year);
+        return orderDAO.countOrderBySellerInMonth(seller_id, month, year);
     }
 
 

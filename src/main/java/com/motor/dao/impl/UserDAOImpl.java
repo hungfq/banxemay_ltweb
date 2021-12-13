@@ -15,6 +15,12 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     }
 
     @Override
+    public List<User> findAllSeller() {
+        String sql = "select * from Users where role_id = 2";
+        return query(sql, new UserMapper());
+    }
+
+    @Override
     public User findOne(int id) {
         String sql = "select * from Users where id = ?";
         List<User> users = query(sql, new UserMapper(), id);
@@ -96,13 +102,18 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
                 user.getPhone(), user.getRole_id(), user.getfullname(), user.getImage());
     }
 
+
     @Override
-    public Long insertSeller(User user) {
-        String sql = "INSERT INTO [dbo].[Users] " +
-                "([username], [password], [mail], [phone], [role_id], [fullname], [image]) " +
-                "VALUES ( ?, ?, ?, ?, 2, ?, NULL);";
-        return insert(sql, user.getUsername(), user.getPassword(), user.getMail(),
-                user.getPhone(), user.getfullname());
+    public int countCustomer() {
+        String sql = "select COUNT(id) from dbo.Users where role_id=3";
+        return count(sql);
     }
+
+    @Override
+    public int countSeller() {
+        String sql = "select COUNT(id) from dbo.Users where role_id=2";
+        return count(sql);
+    }
+
 
 }
