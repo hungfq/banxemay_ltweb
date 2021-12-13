@@ -59,137 +59,84 @@
                             <div class="tabbable">
                                 <div class="tab-pane active" id="tab_general">
                                     <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Full name: <span
-                                                    class="required"> * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" required
-                                                       value="${user.fullname}" name="fullname" placeholder=""/>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Full name: <span
+                                                            class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" required
+                                                               value="${user.fullname}" name="fullname" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Username: <span
+                                                            class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" required
+                                                               value="${user.username}" name="username" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Password: <span
+                                                            class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" required
+                                                               value="${user.password}" name="password" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Phone: <span
+                                                            class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" required
+                                                               value="${user.phone}" name="phone" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Email: <span
+                                                            class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" required
+                                                               value="${user.mail}" name="mail" placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-4 control-label">Role: <span
+                                                            class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-8">
+                                                        <select required style="width: 100%"
+                                                                class="table-group-action-input form-control"
+                                                                name="role">
+                                                            <c:forEach items="${roles}" var="role">
+                                                                <option ${role.id == user.role_id ? "selected" : ""}
+                                                                        value="${role.id}">${role.name}</option>
+                                                            </c:forEach>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Username: <span
-                                                    class="required"> * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" required
-                                                       value="${user.username}" name="username"  placeholder=""/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Password: <span
-                                                    class="required"> * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" required
-                                                       value="${user.password}" name="password"  placeholder=""/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Phone: <span
-                                                    class="required"> * </span>
-                                            </label>
-                                            <div class="col-md-10">
-                                                <input type="text" class="form-control" required
-                                                       value="${user.phone}" name="phone" placeholder=""/>
-                                            </div>
-                                        </div>
-<%--                                        <div class="form-group">--%>
-<%--                                            <label class="col-md-2 control-label">Description:--%>
-<%--                                                <span class="required"> * </span>--%>
-<%--                                            </label>--%>
-<%--                                            <div class="col-md-10">--%>
-<%--                                                    <textarea class="form-control" rows="5"--%>
-<%--                                                              name="description">${product.description}</textarea>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="row">--%>
-<%--                                            <div class="col-md-6 col-sm-12">--%>
-<%--                                                <div class="form-group">--%>
-<%--                                                    <label class="col-md-4 control-label">Price: <span--%>
-<%--                                                            class="required"> * </span>--%>
-<%--                                                    </label>--%>
-<%--                                                    <div class="col-md-8">--%>
-<%--                                                        <input type="number" min="0"  class="form-control" required--%>
-<%--                                                               value="${product.price}" name="price" placeholder="">--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <div class="form-group">--%>
-<%--                                                    <label class="col-md-4 control-label">Amount: <span--%>
-<%--                                                            class="required"> * </span>--%>
-<%--                                                    </label>--%>
-<%--                                                    <div class="col-md-8">--%>
-<%--                                                        <input type="number" min="0" class="form-control" required--%>
-<%--                                                               value="${product.amount}" name="amount" placeholder="">--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <div class="form-group">--%>
-<%--                                                    <label class="col-md-4 control-label">Category: <span--%>
-<%--                                                            class="required"> * </span>--%>
-<%--                                                    </label>--%>
-<%--                                                    <div class="col-md-8">--%>
-<%--                                                        <select required style="width: 100%"--%>
-<%--                                                                class="table-group-action-input form-control"--%>
-<%--                                                                name="categories">--%>
-<%--                                                            <c:forEach items="${categories}" var="cate">--%>
-<%--                                                                <option ${cate.id == product.category_id ? "selected" : ""}--%>
-<%--                                                                        value="${cate.id}">${cate.name}</option>--%>
-<%--                                                            </c:forEach>--%>
-<%--                                                        </select>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <div class="form-group">--%>
-<%--                                                    <label class="col-md-4 control-label">Brand: <span--%>
-<%--                                                            class="required"> * </span>--%>
-<%--                                                    </label>--%>
-<%--                                                    <div class="col-md-8">--%>
-<%--                                                        <select required style="width: 100%"--%>
-<%--                                                                class="table-group-action-input form-control"--%>
-<%--                                                                name="brand">--%>
-<%--                                                            <c:forEach items="${brands}" var="brand">--%>
-<%--                                                                <option ${brand.id == product.brand_id ? "selected" : ""}--%>
-<%--                                                                        value="${brand.id}">${brand.name}</option>--%>
-<%--                                                            </c:forEach>--%>
-<%--                                                        </select>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <div class="form-group">--%>
-<%--                                                    <label class="col-md-4 control-label">Status: <span--%>
-<%--                                                            class="required"> * </span>--%>
-<%--                                                    </label>--%>
-<%--                                                    <div class="col-md-8">--%>
-<%--                                                        <select required style="width: 100%"--%>
-<%--                                                                class="table-group-action-input form-control"--%>
-<%--                                                                name="status">--%>
-<%--                                                            ${product.status == 1 ? "selected" : ""}--%>
-<%--                                                            <option  ${product.status == 1 ? "selected" : ""}--%>
-<%--                                                                    value="1">Published--%>
-<%--                                                            </option>--%>
-<%--                                                            <option  ${product.status == 0 ? "selected" : ""}--%>
-<%--                                                                    value="0">Not Published--%>
-<%--                                                            </option>--%>
-<%--                                                        </select>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="col-md-6 col-sm-12">--%>
-<%--                                                <div style="width: 100%">--%>
-<%--                                                    <input id="file-image" type="hidden" name="image"--%>
-<%--                                                           value="${product.image}"/>--%>
-<%--                                                    <img id="img-show" src="${product.image}"--%>
-<%--                                                         style="max-height: 240px;max-width:100%;"/>--%>
+                                            <div class="col-md-6 col-sm-12">
+                                                <div style="width: 100%">
+                                                    <input id="file-image" type="hidden" name="image"
+                                                           value="${user.image}"/>
+                                                    <img id="img-show" src="${user.image}"
+                                                         style="max-height: 240px;max-width:100%;"/>
 
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </div></form>
                 <div class="portlet light ">
                     <form style="align-items: flex-end; display: flex; justify-content: flex-end;"
                           method="post" enctype="multipart/form-data" id="file-cloudinary">

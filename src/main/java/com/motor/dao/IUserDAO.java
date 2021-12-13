@@ -21,5 +21,11 @@ public interface IUserDAO {
 
     void updatePassword(User user);
 
+    void update(User user);
+
+    void delete(int id);
+
+    Long insert(User user);
+
     Long insertSeller(User user);
 }

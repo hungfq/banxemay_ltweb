@@ -21,13 +21,13 @@
                 <h3>GENERAL</h3>
             </li>
 
-            <li class="${active==1 ? "active":""}"><a href="dashboard">
+            <li class="${active==1 ? "active":""}"><a href="/admin/dashboard">
                 <i class="icon-bar-chart"></i> <span class="title">Dashboard</span>
             </a></li>
-            <li class="${active==2 ? "active":"" }"><a href="users"> <i
+            <li class="${active==2 ? "active":"" }"><a href="/admin/users"> <i
                     class="icon-users"></i> <span class="title">User</span>
             </a></li>
-            <li class="${active==3 ? "active":"" }"><a href="users"> <i
+            <li class="${active==3 ? "active":"" }"><a href="/admin/useredit"> <i
                     class="icon-user"></i> <span class="title">User edit</span>
             </a></li>
 

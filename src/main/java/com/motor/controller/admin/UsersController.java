@@ -23,6 +23,15 @@ public class UsersController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
 
+        String action = req.getParameter("action");
+        String ac = action == null ? "" : action;
+        if (ac.equals("delete")) {
+            int id = Integer.parseInt(req.getParameter("id"));
+            userService.delete(id);
+            resp.sendRedirect("users?msg=" + "Delete user successfully");
+            return;
+        }
+
         List<User> users = userService.findAll();
 
         req.setAttribute("users", users);

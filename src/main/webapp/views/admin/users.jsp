@@ -77,7 +77,7 @@
                                             <a class="btn btn-primary"
                                                href="useredit?action=edit&id=${user.id}">Edit</a>
                                                 <%--                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>--%>
-                                            <a class="btn btn-danger" href="useredit?action=delete&id=${user.id}"
+                                            <a class="btn btn-danger" href="users?action=delete&id=${user.id}"
                                                onclick="return confirm('Do you want to delete?');">Delete</a>
                                         </td>
                                     </tr>

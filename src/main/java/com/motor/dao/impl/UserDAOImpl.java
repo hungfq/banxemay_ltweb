@@ -68,6 +68,35 @@ public class UserDAOImpl extends AbstractDAO<User> implements IUserDAO {
     }
 
     @Override
+    public void update(User user) {
+        String sql = "UPDATE [dbo].[Users] " +
+                "SET [username] = ?, [password] = ?, " +
+                "[mail] = ?, [phone] = ?, " +
+                "[role_id] = ?, [fullname] = ?, [image] = ? " +
+                "WHERE [id] = ?;";
+        update(sql, user.getUsername(), user.getPassword(),
+                user.getMail(), user.getPhone(),
+                user.getRole_id(), user.getfullname(), user.getImage(),
+                user.getId());
+    }
+
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM [dbo].[Users] WHERE id = ?";
+        update(sql, id);
+    }
+
+    @Override
+    public Long insert(User user) {
+        String sql = "INSERT INTO [dbo].[Users] " +
+                "([username], [password], [mail], " +
+                "[phone], [role_id], [fullname], [image]) " +
+                "VALUES ( ?, ?, ?, ?, ?, ?, ?);";
+        return insert(sql, user.getUsername(), user.getPassword(), user.getMail(),
+                user.getPhone(), user.getRole_id(), user.getfullname(), user.getImage());
+    }
+
+    @Override
     public Long insertSeller(User user) {
         String sql = "INSERT INTO [dbo].[Users] " +
                 "([username], [password], [mail], [phone], [role_id], [fullname], [image]) " +

@@ -52,6 +52,21 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    public void update(User user) {
+        userDAO.update(user);
+    }
+
+    @Override
+    public void delete(int id) {
+        userDAO.delete(id);
+    }
+
+    @Override
+    public Long insert(User user) {
+        return userDAO.insert(user);
+    }
+
+    @Override
     public Long insertSeller(User user) {
         return userDAO.insertSeller(user);
     }

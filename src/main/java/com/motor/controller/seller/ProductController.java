@@ -39,7 +39,7 @@ public class ProductController extends HttpServlet {
             int id = Integer.parseInt(req.getParameter("id"));
             if (productService.findOne(id).getSeller_id() == user.getId())
                 productService.delete(id);
-            resp.sendRedirect("product");
+            resp.sendRedirect("product?msg=" + "Delete product successfully");
             return;
         }
         List<Product> products = productService.findAllBySeller(user.getId());
