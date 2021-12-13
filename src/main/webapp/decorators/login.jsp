@@ -124,6 +124,7 @@
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
     <form class="register-form" action="register" method="post">
+        <input type="hidden" name="image"/>
         <h3>Sign Up</h3>
         <p class="hint">Enter your personal details below:</p>
         <div class="form-group">
@@ -141,6 +142,15 @@
             <label class="control-label visible-ie8 visible-ie9">Phone</label>
             <input class="form-control placeholder-no-fix" type="text"
                    placeholder="Phone" name="phone"/>
+        </div>
+        <p class="hint">Enter your role you want:</p>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">Role</label>
+            <select required class="table-group-action-input form-control"
+                    name="role_id">
+                <option value="3">Customer</option>
+                <option value="2">Seller</option>
+            </select>
         </div>
         <p class="hint">Enter your account details below:</p>
         <div class="form-group">

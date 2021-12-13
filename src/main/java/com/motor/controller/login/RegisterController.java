@@ -1,4 +1,4 @@
-package com.motor.controller.seller;
+package com.motor.controller.login;
 
 import com.motor.model.User;
 import com.motor.service.IUserService;
@@ -29,15 +29,18 @@ public class RegisterController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
 
-        String username = req.getParameter("username");
-        String mail = req.getParameter("email");
+        int role = Integer.parseInt(req.getParameter("role_id"));
 
-        User user = new User();
-        user.setMail(mail);
-        user.setUsername(username);
-        user.setfullname(req.getParameter("fullname"));
-        user.setPhone(req.getParameter("phone"));
-        user.setPassword(req.getParameter("password"));
+        String fullname = req.getParameter("fullname");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String mail = req.getParameter("email");
+        String phone = req.getParameter("phone");
+        String image = req.getParameter("image");
+
+        User user1 = new User(-1, username, password, fullname, mail, phone, role, image);
+
+        System.out.println(user1);
 
         User existingUsername = userService.findOneWithUsername(username);
         User existingEmail = userService.findOneWithEmail(mail);
@@ -47,7 +50,7 @@ public class RegisterController extends HttpServlet {
         } else if (existingEmail != null) {
             errorMessage = "Email already exists";
         } else {
-            userService.insertSeller(user);
+            userService.insert(user1);
             errorMessage = "Account successfully created";
         }
         resp.sendRedirect("login?errorMessage=" + errorMessage);
