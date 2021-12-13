@@ -21,4 +21,19 @@ public class CategoryServiceImpl implements ICategoryService {
     public Category findOne(int id) {
         return categoryDAO.findOne(id);
     }
+
+    @Override
+    public Long insert(Category category) {
+        return categoryDAO.insert(category);
+    }
+
+    @Override
+    public void update(Category category) {
+        categoryDAO.update(category);
+    }
+
+    @Override
+    public void delete(int id) {
+        categoryDAO.delete(id);
+    }
 }

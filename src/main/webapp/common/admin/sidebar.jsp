@@ -33,6 +33,9 @@
             <li class="${active==4 ? "active":"" }"><a href="/admin/brands"> <i
                     class="icon-tag"></i> <span class="title">Brand</span>
             </a></li>
+            <li class="${active==5 ? "active":"" }"><a href="/admin/categories"> <i
+                    class="icon-grid"></i> <span class="title">Category</span>
+            </a></li>
 
             <%--            <c:if test="${active==6}">--%>
             <%--                <li class="active"><a href="#"> <i--%>
