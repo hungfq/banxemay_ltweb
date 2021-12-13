@@ -30,6 +30,9 @@
             <li class="${active==3 ? "active":"" }"><a href="/admin/useredit"> <i
                     class="icon-user"></i> <span class="title">User edit</span>
             </a></li>
+            <li class="${active==4 ? "active":"" }"><a href="/admin/brands"> <i
+                    class="icon-tag"></i> <span class="title">Brand</span>
+            </a></li>
 
             <%--            <c:if test="${active==6}">--%>
             <%--                <li class="active"><a href="#"> <i--%>

@@ -20,4 +20,22 @@ public class BrandDAOImpl extends AbstractDAO<Brand> implements IBrandDAO {
         List<Brand> brand = query(sql, new BrandMapper(), id);
         return brand.isEmpty() ? null : brand.get(0);
     }
+
+    @Override
+    public Long insert(Brand brand) {
+        String sql = "INSERT INTO [dbo].[Brands] ([name]) VALUES (?);";
+        return insert(sql, brand.getName());
+    }
+
+    @Override
+    public void update(Brand brand) {
+        String sql = "UPDATE [dbo].[Brands] SET [name] = ? WHERE [id] = ?;";
+        update(sql, brand.getName(), brand.getId());
+    }
+
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM [dbo].[Brands] WHERE id = ?";
+        update(sql, id);
+    }
 }

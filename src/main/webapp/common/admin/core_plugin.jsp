@@ -30,7 +30,7 @@
 <script
         src="<c:url value="/templates/assets/global/plugins/uniform/jquery.uniform.min.js"/>"
         type="text/javascript"></script>
-<script
-        src="<c:url value="/templates/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"/>"
-        type="text/javascript"></script>
+<%--<script--%>
+<%--        src="<c:url value="/templates/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"/>"--%>
+<%--        type="text/javascript"></script>--%>
 <!-- END CORE PLUGINS -->

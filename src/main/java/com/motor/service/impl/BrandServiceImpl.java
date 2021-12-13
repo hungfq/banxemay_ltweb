@@ -20,4 +20,19 @@ public class BrandServiceImpl implements IBrandService {
     public Brand findOne(int id) {
         return brandDAO.findOne(id);
     }
+
+    @Override
+    public Long insert(Brand brand) {
+        return brandDAO.insert(brand);
+    }
+
+    @Override
+    public void update(Brand brand) {
+        brandDAO.update(brand);
+    }
+
+    @Override
+    public void delete(int id) {
+        brandDAO.delete(id);
+    }
 }
