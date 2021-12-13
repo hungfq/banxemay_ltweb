@@ -2,8 +2,10 @@ package com.motor.model;
 
 import com.motor.service.IBrandService;
 import com.motor.service.ICategoryService;
+import com.motor.service.IUserService;
 import com.motor.service.impl.BrandServiceImpl;
 import com.motor.service.impl.CategoryServiceImpl;
+import com.motor.service.impl.UserServiceImpl;
 
 public class Product {
     private int id;
@@ -39,6 +41,7 @@ public class Product {
 
     ICategoryService categoryService = new CategoryServiceImpl();
     IBrandService brandService = new BrandServiceImpl();
+    IUserService userService = new UserServiceImpl();
 
     public String getCategoryName() {
         return categoryService.findOne(category_id).getName();
@@ -48,6 +51,7 @@ public class Product {
         return brandService.findOne(brand_id).getName();
     }
 
+    public String getSellerName() { return userService.findOne(seller_id).getfullname();}
 
     public int getId() {
         return id;

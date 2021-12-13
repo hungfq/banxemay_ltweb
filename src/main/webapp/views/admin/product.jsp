@@ -3,7 +3,7 @@
 <%@include file="/common/taglib.jsp" %>
 
 <head>
-    <title>Users</title>
+    <title>Products</title>
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link rel="stylesheet" type="text/css"
           href="<c:url value="/templates/assets/global/plugins/select2/select2.css"/>"/>
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css"
           href="<c:url value="/templates/assets/global/plugins/bootstrap-datepicker/css/datepicker.css"/>"/>
     <!-- END PAGE LEVEL STYLES -->
-    <%@include file="/common/seller/theme.jsp" %>
+    <%@include file="/common/admin/theme.jsp" %>
     <link rel="stylesheet"
           href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <link rel="stylesheet"
@@ -33,58 +33,71 @@
             <div class="col-md-12">
                 <div class="alert alert-warning ${param.msg == null ? "display-hide" : ""}">
                     <button class="close" data-close="alert"></button>
-                    <span> <c:out value="${param.msg}"/>  </span>
+                    <span> <c:out value="${param.msg}" />  </span>
                 </div>
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
                     <div class="portlet-title">
                         <div class="caption">
                             <i class="fa fa-gift font-green-sharp"></i> <span
-                                class="caption-subject font-green-sharp bold uppercase">Users</span>
-                            <span class="caption-helper">manage users...</span>
+                                class="caption-subject font-green-sharp bold uppercase">Products</span>
+                            <span class="caption-helper">manage products...</span>
                         </div>
-                        <div class="actions">
-                            <a href="useredit?action=add" class="btn green-haze btn-circle">
-                                <i class="fa fa-plus"></i>
-                                <span class="hidden-480"> New User </span>
-                            </a>
-                        </div>
+<%--                        <div class="actions">--%>
+<%--                            <a href="productedit?action=add" class="btn green-haze btn-circle">--%>
+<%--                                <i class="fa fa-plus"></i>--%>
+<%--                                <span class="hidden-480"> New Product </span>--%>
+<%--                            </a>--%>
+<%--                        </div>--%>
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
+                            <style>
+                                td {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    height: 60px;
+                                }
 
+                                table {
+                                    table-layout: fixed;
+                                    width: 200px;
+                                }
+                            </style>
                             <table id="example" class="table table-striped table-bordered"
                                    style="width: 100%">
                                 <thead>
                                 <tr>
-                                    <th>No.</th>
-                                    <th>Image</th>
-                                    <th>Full name</th>
-                                    <th>username</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
+                                    <th width="3%">No.</th>
+                                    <th width="10%">Image</th>
+                                    <th width="10%">Name</th>
+                                    <th width="10%">Price</th>
+                                    <th width="15%">Description</th>
+                                    <th width="10%">Category</th>
+                                    <th width="6%">Brand</th>
+                                    <th width="6%">Amount</th>
+                                    <th width="8%">Status</th>
+                                    <th width="12%">Seller</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${users}" var="user" varStatus="STT">
+                                <%--                                <fmt:setLocale value="fr_CA"/>--%>
+                                <c:forEach items="${products}" var="pro" varStatus="STT">
                                     <tr>
-                                        <td>${STT.index + 1}</td>
+                                        <td>${STT.index+1}</td>
                                         <td style="text-align: center; vertical-align: middle;">
-                                            <img src="${user.image}" height="60px"/></td>
-                                        <td>${user.fullname}</td>
-                                        <td>${user.username}</td>
-                                        <td>${user.mail}</td>
-                                        <td>${user.phone}</td>
-                                        <td>${user.getRoleName()}</td>
+                                            <img src="${pro.image}" height="60px"/></td>
+                                        <td>${pro.name}</td>
                                         <td>
-                                            <a class="btn btn-primary"
-                                               href="useredit?action=edit&id=${user.id}">Edit</a>
-                                                <%--                                            <a class="btn btn-danger" href="product?action=delete&id=${pro.id}">Xóa</a>--%>
-                                            <a class="btn btn-danger" href="users?action=delete&id=${user.id}"
-                                               onclick="return confirm('Do you want to delete?');">Delete</a>
+                                            <fmt:formatNumber value="${pro.price}" type="currency"
+                                                              maxFractionDigits="0" currencySymbol="VNĐ"/>
                                         </td>
+                                        <td class="description" style="max-height: 60px">${pro.description}</td>
+                                        <td>${pro.getCategoryName()}</td>
+                                        <td>${pro.getBrandName()}</td>
+                                        <td>${pro.amount}</td>
+                                        <td>${pro.status == 1 ? "Published" : "Unpublished"}</td>
+                                        <td>${pro.getSellerName()}</td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -103,7 +116,7 @@
 
 <content tag="local_script"> <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 
-    <%@include file="/common/seller/core_plugin.jsp" %>
+    <%@include file="/common/admin/core_plugin.jsp" %>
 
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script type="text/javascript"
@@ -138,6 +151,8 @@
             EcommerceProducts.init();
         });
     </script>
+<%--    <script type="text/javascript"--%>
+<%--            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>--%>
 
     <!--Data Table-->
     <script type="text/javascript"

@@ -36,12 +36,15 @@
             <li class="${active==5 ? "active":"" }"><a href="/admin/categories"> <i
                     class="icon-grid"></i> <span class="title">Category</span>
             </a></li>
-
-            <%--            <c:if test="${active==6}">--%>
-            <%--                <li class="active"><a href="#"> <i--%>
-            <%--                        class="icon-pencil"></i> <span class="title">Profile</span>--%>
-            <%--                </a></li>--%>
-            <%--            </c:if>--%>
+            <li class="${active==6 ? "active":"" }"><a href="/admin/payments"> <i
+                    class="icon-wallet"></i> <span class="title">Payment</span>
+            </a></li>
+            <li class="${active==7 ? "active":"" }"><a href="/admin/products"> <i
+                    class="icon-handbag"></i> <span class="title">Products</span>
+            </a></li>
+<%--            <li class="${active==8 ? "active":"" }"><a href="/admin/productedit?action=add"> <i--%>
+<%--                    class="icon-pencil"></i> <span class="title">Products edit</span>--%>
+<%--            </a></li>--%>
         </ul>
         <!-- END SIDEBAR MENU -->
     </div>

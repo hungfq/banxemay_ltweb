@@ -1,10 +1,12 @@
-package com.motor.service;
+package com.motor.dao;
 
+
+import com.motor.model.Brand;
 import com.motor.model.Payment;
 
 import java.util.List;
 
-public interface IPaymentService {
+public interface IPaymentDAO {
     List<Payment> findAll();
 
     Payment findOne(int id);

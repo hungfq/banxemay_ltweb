@@ -29,6 +29,9 @@ public class SecurityConfig {
         adminUrlPattern.add("/admin/users");
         adminUrlPattern.add("/admin/useredit");
         adminUrlPattern.add("/admin/brands");
+        adminUrlPattern.add("/admin/categories");
+        adminUrlPattern.add("/admin/payments");
+        adminUrlPattern.add("/admin/products");
 
 
         mapConfig.put(ROLE_ADMIN, adminUrlPattern);
