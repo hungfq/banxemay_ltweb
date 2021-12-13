@@ -30,8 +30,11 @@ public interface IOrderService {
 
     List<User> findUserBySeller(int seller_id);
 
+    long getRevenueInMonth( int month, int year);
+
     long getRevenueBySellerInMonth(int seller_id, int month, int year);
 
+    int countOrderInMonth(int month, int year);
     int countOrderBySellerInMonth(int seller_id, int month, int year);
 
 }

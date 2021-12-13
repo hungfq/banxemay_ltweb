@@ -79,8 +79,18 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public long getRevenueInMonth(int month, int year) {
+        return orderDAO.getRevenueInMonth(month, year);
+    }
+
+    @Override
     public long getRevenueBySellerInMonth(int seller_id, int month, int year) {
         return orderDAO.getRevenueBySellerInMonth(seller_id, month, year);
+    }
+
+    @Override
+    public int countOrderInMonth(int month, int year) {
+        return orderDAO.countOrderInMonth(month, year);
     }
 
     @Override

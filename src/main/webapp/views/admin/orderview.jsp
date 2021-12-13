@@ -105,7 +105,8 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
                                         <div class="portlet red-sunglo box">
                                             <div class="portlet-title">
                                                 <div class="caption">
@@ -132,6 +133,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="row">
                                     <div class="col-md-6 col-sm-12">
                                         <div class="portlet blue-hoki box">
                                             <div class="portlet-title">
@@ -154,7 +158,8 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
                                         <div class="portlet green-meadow box">
                                             <div class="portlet-title">
                                                 <div class="caption">

@@ -136,6 +136,21 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
+    public long getRevenueInMonth(int month, int year) {
+        String sql = "select sum(a.total) as average\n" +
+                "from (\n" +
+                "\tselect cast(sum(a.money)as bigint) as total\n" +
+                "\tfrom\n" +
+                "\t\t(select o.id, quantity*cast(unit_price as bigint) as money\n" +
+                "\t\tfrom OrderDetails as od, Orders as o\n" +
+                "\t\twhere od.order_id = o.id and o.status!=4\n" +
+                "\t\tand MONTH(o.buy_date) = ? and YEAR(o.buy_date) = ?)\n" +
+                "\t\tas a\n" +
+                "\tgroup by a.id) as a";
+        return get(sql, month, year);
+    }
+
+    @Override
     public long getRevenueBySellerInMonth(int seller_id, int month, int year) {
         String sql = "select sum(a.total) as average\n" +
                 "from (\n" +
@@ -148,6 +163,15 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
                 "\t\tas a\n" +
                 "\tgroup by a.id) as a";
         return get(sql, seller_id, month, year);
+    }
+
+    @Override
+    public int countOrderInMonth(int month, int year) {
+        String sql = "select COUNT(id) as soluong\n" +
+                "from Orders \n" +
+                "where status!=4   \n" +
+                "\tand  MONTH(buy_date) = ? and YEAR(buy_date) = ?";
+        return count(sql, month, year);
     }
 
     @Override
