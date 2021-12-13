@@ -19,7 +19,4 @@
     <decorator name="login" page="login.jsp">
         <pattern>/login</pattern>
     </decorator>
-    <decorator name="lock" page="lock.jsp">
-        <pattern>/lock</pattern>
-    </decorator>
 </decorators>
