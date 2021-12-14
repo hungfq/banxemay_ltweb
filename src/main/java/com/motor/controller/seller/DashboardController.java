@@ -47,7 +47,7 @@ public class DashboardController extends HttpServlet {
         Gson gson = new Gson();
         List<Long> revenue = new ArrayList<>();
         List<Integer> orderCount = new ArrayList<>();
-        for (int month = 0; month <= 12; month++) {
+        for (int month = 1; month <= 12; month++) {
             revenue.add(orderService.getRevenueBySellerInMonth(user.getId(), month, year));
             orderCount.add(orderService.countOrderBySellerInMonth(user.getId(), month, year));
         }
