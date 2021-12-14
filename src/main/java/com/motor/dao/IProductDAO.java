@@ -19,4 +19,6 @@ public interface IProductDAO {
     void delete(int id);
 
     List<Product> findTopSelling(int seller_id);
+
+    long count();
 }

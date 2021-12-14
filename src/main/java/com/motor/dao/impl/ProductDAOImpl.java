@@ -71,4 +71,10 @@ public class ProductDAOImpl extends AbstractDAO<Product> implements IProductDAO 
                 "order by sum(OD.quantity) desc";
         return query(sql, new ProductMapper(), seller_id);
     }
+
+    @Override
+    public long count() {
+        String sql = "select COUNT(id) from Products";
+        return get(sql);
+    }
 }

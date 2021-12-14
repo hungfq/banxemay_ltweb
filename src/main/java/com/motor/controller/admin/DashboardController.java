@@ -3,8 +3,10 @@ package com.motor.controller.admin;
 import com.google.gson.Gson;
 import com.motor.model.User;
 import com.motor.service.IOrderService;
+import com.motor.service.IProductService;
 import com.motor.service.IUserService;
 import com.motor.service.impl.OrderServiceImpl;
+import com.motor.service.impl.ProductServiceImpl;
 import com.motor.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
@@ -23,6 +25,7 @@ public class DashboardController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     IOrderService orderService = new OrderServiceImpl();
     IUserService userService = new UserServiceImpl();
+    IProductService productService = new ProductServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -36,6 +39,7 @@ public class DashboardController extends HttpServlet {
         int countSeller = userService.countSeller();
         long countOrder = orderService.countAll();
         long orderMoneyTotal = orderService.orderMoneyTotal();
+        long countProduct = productService.count();
         List<User> topCustomer = orderService.findTopCustomer();
         List<User> topSeller = orderService.findTopSeller();
 
@@ -51,6 +55,7 @@ public class DashboardController extends HttpServlet {
         req.setAttribute("orderCount", gson.toJson(orderCount));
         req.setAttribute("revenue", gson.toJson(revenue));
 
+        req.setAttribute("countProduct", countProduct);
         req.setAttribute("topSeller", topSeller);
         req.setAttribute("topCustomer", topCustomer);
         req.setAttribute("orderMoneyTotal", orderMoneyTotal);

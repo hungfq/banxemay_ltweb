@@ -21,7 +21,12 @@
 <body>
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
-    <div class="page-content" style="padding-top: 0px">
+    <style type="text/css">
+        #page-content {
+            padding-top: 0 !important;
+        }
+    </style>
+    <div class="page-content" id="page-content">
 
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">

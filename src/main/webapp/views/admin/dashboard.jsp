@@ -25,10 +25,52 @@
 
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="dashboard-stat green-haze">
+                    <div class="visual">
+                        <i class="fa fa-group fa-icon-medium"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">${countCustomer}</div>
+                        <div class="desc">Number of Customer</div>
+                    </div>
+                    <a class="more" href="/admin/users"> View more <i
+                            class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="dashboard-stat purple-plum">
+                    <div class="visual">
+                        <i class="fa fa-globe fa-icon-medium"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number">${countSeller}</div>
+                        <div class="desc">Number of Seller</div>
+                    </div>
+                    <a class="more" href="/admin/users"> View more <i
+                            class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="dashboard-stat yellow-gold">
+                    <div class="visual">
+                        <i class="fa fa-btc"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number"> ${countProduct} </div>
+                        <div class="desc">Number of Products</div>
+                    </div>
+                    <a class="more" href="/admin/products"> View more <i
+                            class="m-icon-swapright m-icon-white"></i>
+                    </a>
+                </div>
+            </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="dashboard-stat blue-madison">
                     <div class="visual">
-                        <i class="fa fa-briefcase fa-icon-medium"></i>
+                        <i class="fa fa-bar-chart fa-icon-medium"></i>
                     </div>
                     <div class="details">
                         <div class="number"><fmt:formatNumber
@@ -38,7 +80,7 @@
                                 currencySymbol="VNĐ"/></div>
                         <div class="desc">Total value of orders</div>
                     </div>
-                    <a class="more" href="order"> View more <i
+                    <a class="more" href="/admin/orders"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -52,35 +94,7 @@
                         <div class="number"> ${countOrder} </div>
                         <div class="desc">Number of orders</div>
                     </div>
-                    <a class="more" href="order"> View more <i
-                            class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="dashboard-stat green-haze">
-                    <div class="visual">
-                        <i class="fa fa-group fa-icon-medium"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number">${countCustomer}</div>
-                        <div class="desc">Number of Customer</div>
-                    </div>
-                    <a class="more" href="order"> View more <i
-                            class="m-icon-swapright m-icon-white"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="dashboard-stat purple-plum">
-                    <div class="visual">
-                        <i class="fa fa-globe fa-icon-medium"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number">${countSeller}</div>
-                        <div class="desc">Number of Seller</div>
-                    </div>
-                    <a class="more" href="order"> View more <i
+                    <a class="more" href="/admin/orders"> View more <i
                             class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -121,7 +135,6 @@
                                                 <th>Seller Name</th>
                                                 <th>Total Orders</th>
                                                 <th>Total Amount</th>
-                                                <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
