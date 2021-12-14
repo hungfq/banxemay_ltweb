@@ -82,6 +82,6 @@ public class OrderviewController extends HttpServlet {
         o.setStatus(status);
         o.setId(id);
         orderService.updateStatus(o);
-        resp.sendRedirect("order?msg=" + "Change order status successfully");
+        resp.sendRedirect("orders?msg=" + "Change order status successfully");
     }
 }
