@@ -1,12 +1,12 @@
 var EcommerceOrders = function () {
 
-    // var initPickers = function () {
-    //     //init date pickers
-    //     $('.date-picker').datepicker({
-    //         rtl: Metronic.isRTL(),
-    //         autoclose: true
-    //     });
-    // }
+    var initPickers = function () {
+        //init date pickers
+        $('.date-picker').datepicker({
+            rtl: Metronic.isRTL(),
+            autoclose: true
+        });
+    }
     //
     // var handleOrders = function () {
     //
@@ -77,7 +77,7 @@ var EcommerceOrders = function () {
         //main function to initiate the module
         init: function () {
 
-            // initPickers();
+            initPickers();
             // handleOrders();
         }
 

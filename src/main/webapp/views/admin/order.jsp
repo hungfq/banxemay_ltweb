@@ -42,6 +42,12 @@
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
+                            <style>
+                                table {
+                                    table-layout: fixed;
+                                    width: 200px;
+                                }
+                            </style>
                             <table id="example" class="table table-striped table-bordered"
                                    style="width: 100%">
                                 <thead>
@@ -113,13 +119,14 @@
     <script
             src="<c:url value="/templates/assets/admin/layout2/scripts/demo.js"/>"
             type="text/javascript"></script>
-
+    <script
+            src="<c:url value="/templates/assets/admin/pages/scripts/ecommerce-orders.js"/>"></script>
     <script>
         jQuery(document).ready(function () {
             Metronic.init(); // init metronic core components
             Layout.init(); // init current layout
             Demo.init(); // init demo features
-            // EcommerceOrders.init();
+            EcommerceOrders.init();
         });
     </script>
     <%--    <script type="text/javascript"--%>

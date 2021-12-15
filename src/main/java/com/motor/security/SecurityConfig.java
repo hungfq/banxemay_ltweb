@@ -32,6 +32,7 @@ public class SecurityConfig {
         adminUrlPattern.add("/admin/categories");
         adminUrlPattern.add("/admin/payments");
         adminUrlPattern.add("/admin/products");
+        adminUrlPattern.add("/admin/productedit");
         adminUrlPattern.add("/admin/orders");
         adminUrlPattern.add("/admin/orderview");
 

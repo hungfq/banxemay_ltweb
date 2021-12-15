@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <div class="alert alert-warning ${param.msg == null ? "display-hide" : ""}">
                     <button class="close" data-close="alert"></button>
-                    <span> <c:out value="${param.msg}" />  </span>
+                    <span> <c:out value="${param.msg}"/>  </span>
                 </div>
                 <!-- Begin: life time stats -->
                 <div class="portlet light">
@@ -43,22 +43,16 @@
                                 class="caption-subject font-green-sharp bold uppercase">Products</span>
                             <span class="caption-helper">manage products...</span>
                         </div>
-<%--                        <div class="actions">--%>
-<%--                            <a href="productedit?action=add" class="btn green-haze btn-circle">--%>
-<%--                                <i class="fa fa-plus"></i>--%>
-<%--                                <span class="hidden-480"> New Product </span>--%>
-<%--                            </a>--%>
-<%--                        </div>--%>
+                        <div class="actions">
+                            <a href="/admin/productedit?action=add" class="btn green-haze btn-circle">
+                                <i class="fa fa-plus"></i>
+                                <span class="hidden-480"> New Product </span>
+                            </a>
+                        </div>
                     </div>
                     <div class="portlet-body">
                         <div class="table-container">
                             <style>
-                                td {
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    height: 60px;
-                                }
-
                                 table {
                                     table-layout: fixed;
                                     width: 200px;
@@ -70,14 +64,15 @@
                                 <tr>
                                     <th width="3%">No.</th>
                                     <th width="10%">Image</th>
-                                    <th width="10%">Name</th>
+                                    <th width="12%">Name</th>
                                     <th width="10%">Price</th>
-                                    <th width="15%">Description</th>
+                                    <%-- <th width="15%">Description</th>--%>
                                     <th width="10%">Category</th>
                                     <th width="6%">Brand</th>
                                     <th width="6%">Amount</th>
                                     <th width="8%">Status</th>
                                     <th width="12%">Seller</th>
+                                    <th width="13%">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -92,12 +87,17 @@
                                             <fmt:formatNumber value="${pro.price}" type="currency"
                                                               maxFractionDigits="0" currencySymbol="VNĐ"/>
                                         </td>
-                                        <td class="description" style="max-height: 60px">${pro.description}</td>
                                         <td>${pro.getCategoryName()}</td>
                                         <td>${pro.getBrandName()}</td>
                                         <td>${pro.amount}</td>
                                         <td>${pro.status == 1 ? "Published" : "Unpublished"}</td>
                                         <td>${pro.getSellerName()}</td>
+                                        <td>
+                                            <a class="btn btn-primary"
+                                               href="productedit?action=edit&id=${pro.id}">Edit</a>
+                                            <a class="btn btn-danger" href="products?action=delete&id=${pro.id}"
+                                               onclick="return confirm('Do you want to delete?');">Del</a>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -151,8 +151,8 @@
             EcommerceProducts.init();
         });
     </script>
-<%--    <script type="text/javascript"--%>
-<%--            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>--%>
+    <%--    <script type="text/javascript"--%>
+    <%--            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>--%>
 
     <!--Data Table-->
     <script type="text/javascript"
