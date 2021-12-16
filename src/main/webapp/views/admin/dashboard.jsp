@@ -121,10 +121,15 @@
                     <div class="portlet-body">
                         <div class="tabbable-line">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#overview_1" data-toggle="tab">
-                                    Seller </a></li>
-                                <li><a href="#overview_3" data-toggle="tab"> Customers
-                                </a></li>
+                                <li class="active">
+                                    <a href="#overview_1" data-toggle="tab">Best Seller </a>
+                                </li>
+                                <li>
+                                    <a href="#overview_2" data-toggle="tab"> Customers</a>
+                                </li>
+                                <li>
+                                    <a href="#overview_3" data-toggle="tab"> Top Selling</a>
+                                </li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="overview_1">
@@ -156,7 +161,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="overview_3">
+                                <div class="tab-pane" id="overview_2">
                                     <div class="table-responsive">
                                         <table class="table table-striped table-hover table-bordered">
                                             <thead>
@@ -179,6 +184,37 @@
                                                             currencySymbol="VNĐ"/>
                                                     </td>
                                                         <%-- tổng tiền đơn hàng --%>
+                                                </tr>
+                                            </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="overview_3">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Sold</th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <c:forEach items="${topSelling}" var="item">
+                                                <tr>
+                                                    <td>
+                                                        <a href="productedit?action=edit&id=${item.id}">
+                                                                ${item.name} </a></td>
+                                                    <td><fmt:formatNumber
+                                                            value="${item.price}"
+                                                            type="currency"
+                                                            maxFractionDigits="0"
+                                                            currencySymbol="VNĐ"/></td>
+                                                    <td>${item.amount}</td>
+                                                    <td><a href="productedit?action=edit&id=${item.id}"
+                                                           class="btn default btn-xs green-stripe"> View </a></td>
                                                 </tr>
                                             </c:forEach>
                                             </tbody>

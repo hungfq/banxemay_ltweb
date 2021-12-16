@@ -37,7 +37,7 @@ public class DashboardController extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("loginedUser");
 
-        List<Product> topSelling = productService.findTopSelling(user.getId());
+        List<Product> topSelling = productService.findTopSellingOfSeller(user.getId());
         int totalOrder = orderService.countBySeller(user.getId());
         long orderMoneyTotal = orderService.orderMoneyTotalBySeller(user.getId());
         long orderMoneyAverages = orderService.orderMoneyAveragesBySeller(user.getId());

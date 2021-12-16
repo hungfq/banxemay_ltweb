@@ -98,12 +98,12 @@
                     <div class="portlet-body">
                         <div class="tabbable-line">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#overview_1" data-toggle="tab">
-                                    Top Selling </a></li>
-                                <%--                                <li><a href="#overview_2" data-toggle="tab"> Most--%>
-                                <%--                                    Viewed </a></li>--%>
-                                <li><a href="#overview_3" data-toggle="tab"> Customers
-                                </a></li>
+                                <li class="active">
+                                    <a href="#overview_1" data-toggle="tab">Top Selling </a>
+                                </li>
+                                <li>
+                                    <a href="#overview_2" data-toggle="tab"> Customers</a>
+                                </li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="overview_1">
@@ -137,7 +137,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="overview_3">
+                                <div class="tab-pane" id="overview_2">
                                     <div class="table-responsive">
                                         <table class="table table-striped table-hover table-bordered">
                                             <thead>

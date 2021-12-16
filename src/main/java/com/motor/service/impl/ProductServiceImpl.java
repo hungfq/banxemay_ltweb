@@ -42,8 +42,13 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public List<Product> findTopSelling(int seller_id) {
-        return productDAO.findTopSelling(seller_id);
+    public List<Product> findTopSelling() {
+        return productDAO.findTopSelling();
+    }
+
+    @Override
+    public List<Product> findTopSellingOfSeller(int seller_id) {
+        return productDAO.findTopSellingOfSeller(seller_id);
     }
 
     @Override

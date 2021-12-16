@@ -17,7 +17,9 @@ public interface IProductService {
 
     void delete(int id);
 
-    List<Product> findTopSelling(int seller_id);
+    List<Product> findTopSelling();
+
+    List<Product> findTopSellingOfSeller(int seller_id);
 
     long count();
 }

@@ -1,6 +1,7 @@
 package com.motor.controller.admin;
 
 import com.google.gson.Gson;
+import com.motor.model.Product;
 import com.motor.model.User;
 import com.motor.service.IOrderService;
 import com.motor.service.IProductService;
@@ -42,6 +43,7 @@ public class DashboardController extends HttpServlet {
         long countProduct = productService.count();
         List<User> topCustomer = orderService.findTopCustomer();
         List<User> topSeller = orderService.findTopSeller();
+        List<Product> topSelling = productService.findTopSelling();
 
         int year = Calendar.getInstance().get(Calendar.YEAR);
         Gson gson = new Gson();
@@ -55,6 +57,7 @@ public class DashboardController extends HttpServlet {
         req.setAttribute("orderCount", gson.toJson(orderCount));
         req.setAttribute("revenue", gson.toJson(revenue));
 
+        req.setAttribute("topSelling", topSelling);
         req.setAttribute("countProduct", countProduct);
         req.setAttribute("topSeller", topSeller);
         req.setAttribute("topCustomer", topCustomer);
