@@ -39,6 +39,11 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public long countNotCancelled() {
+        return orderDAO.countNotCancelled();
+    }
+
+    @Override
     public int countBySeller(int seller_id) {
         return orderDAO.countBySeller(seller_id);
     }

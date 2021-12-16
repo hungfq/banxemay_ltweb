@@ -38,7 +38,7 @@ public class DashboardController extends HttpServlet {
 
         int countCustomer = userService.countCustomer();
         int countSeller = userService.countSeller();
-        long countOrder = orderService.countAll();
+        long countOrder = orderService.countNotCancelled();
         long orderMoneyTotal = orderService.orderMoneyTotal();
         long countProduct = productService.count();
         List<User> topCustomer = orderService.findTopCustomer();

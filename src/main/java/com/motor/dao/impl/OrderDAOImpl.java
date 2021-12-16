@@ -42,6 +42,12 @@ public class OrderDAOImpl extends AbstractDAO<Order> implements IOrderDAO {
     }
 
     @Override
+    public long countNotCancelled() {
+        String sql = "select count(id) from Orders WHERE status != 4";
+        return get(sql);
+    }
+
+    @Override
     public int countBySeller(int seller_id) {
         String sql = "select count(id) from Orders where seller_id = ?";
         return count(sql, seller_id);

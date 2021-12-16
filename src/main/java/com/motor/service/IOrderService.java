@@ -16,6 +16,8 @@ public interface IOrderService {
 
     long countAll();
 
+    long countNotCancelled();
+
     int countBySeller(int seller_id);
 
     long orderMoneyTotal();
