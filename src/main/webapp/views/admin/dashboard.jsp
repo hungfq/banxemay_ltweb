@@ -145,7 +145,8 @@
                                             <tbody>
                                             <c:forEach items="${topSeller}" var="user">
                                                 <tr>
-                                                    <td> ${user.fullname}</td>
+                                                    <td><a href="useredit?action=edit&id=${user.id}">
+                                                            ${user.fullname}</a></td>
                                                     <td>${user.mail}</td>
                                                         <%-- số lượng đơn hàng --%>
                                                     <td><fmt:formatNumber
@@ -174,9 +175,12 @@
                                             <tbody>
                                             <c:forEach items="${topCustomer}" var="user">
                                                 <tr>
-                                                    <td> ${user.fullname}</td>
+                                                    <td>
+                                                        <a href="useredit?action=edit&id=${user.id}">
+                                                                ${user.fullname}</a>
+                                                    </td>
                                                     <td>${user.mail}</td>
-                                                        <%-- số lượng đơn hàng --%>
+                                                        <%--số lượng đơn hàng--%>
                                                     <td><fmt:formatNumber
                                                             value="${user.phone}"
                                                             type="currency"
