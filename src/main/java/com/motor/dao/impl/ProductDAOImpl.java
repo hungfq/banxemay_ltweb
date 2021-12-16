@@ -47,6 +47,12 @@ public class ProductDAOImpl extends AbstractDAO<Product> implements IProductDAO 
     }
 
     @Override
+    public void updateStatus(Product product) {
+        String sql = "UPDATE [dbo].[Products] SET [status] = ?  WHERE [id] = ?;";
+        update(sql, product.getStatus(), product.getId());
+    }
+
+    @Override
     public void delete(int id) {
         String sql = "DELETE FROM Products WHERE id = ?";
         update(sql, id);

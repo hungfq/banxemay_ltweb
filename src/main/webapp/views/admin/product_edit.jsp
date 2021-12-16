@@ -65,7 +65,7 @@
                                                     class="required"> * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" required
+                                                <input type="text" class="form-control" readonly
                                                        value="${product.name}" name="name" placeholder=""/>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                                 <span class="required"> * </span>
                                             </label>
                                             <div class="col-md-10">
-                                                    <textarea class="form-control" rows="5"
+                                                    <textarea class="form-control" rows="5" readonly
                                                               name="description">${product.description}</textarea>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <input type="number" min="0"  class="form-control" required
+                                                        <input type="number" min="0"  class="form-control" readonly
                                                                value="${product.price}" name="price" placeholder="">
                                                     </div>
                                                 </div>
@@ -94,7 +94,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <input type="number" min="0" class="form-control" required
+                                                        <input type="number" min="0" class="form-control" readonly
                                                                value="${product.amount}" name="amount" placeholder="">
                                                     </div>
                                                 </div>
@@ -103,7 +103,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <select required style="width: 100%"
+                                                        <select required style="width: 100%" readonly
                                                                 class="table-group-action-input form-control"
                                                                 name="categories">
                                                             <c:forEach items="${categories}" var="cate">
@@ -118,7 +118,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <select required style="width: 100%"
+                                                        <select required style="width: 100%" readonly
                                                                 class="table-group-action-input form-control"
                                                                 name="brand">
                                                             <c:forEach items="${brands}" var="brand">
@@ -133,7 +133,7 @@
                                                             class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-8">
-                                                        <select required style="width: 100%"
+                                                        <select required style="width: 100%" readonly
                                                                 class="table-group-action-input form-control"
                                                                 name="seller_id">
                                                             <c:forEach items="${users}" var="user">
@@ -184,7 +184,7 @@
                           method="post" enctype="multipart/form-data" id="file-cloudinary">
                         <input style="visibility: hidden" class="btn btn-default btn-circle" type="file"
                                accept="image/*" id="file-chooser" name="files[]" multiple/>
-                        <button class="btn btn-default btn-circle"
+                        <button class="btn btn-default btn-circle" disabled
                                 onclick="document.getElementById('file-chooser').click();">Browse...
                         </button>
                         <button style="visibility: hidden" id="file-cloudinary-submit" type="submit"

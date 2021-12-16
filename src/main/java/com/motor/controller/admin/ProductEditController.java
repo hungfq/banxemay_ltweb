@@ -73,23 +73,19 @@ public class ProductEditController extends HttpServlet {
 
 
         String action = req.getParameter("action");
-        String name = req.getParameter("name");
-        String description = req.getParameter("description");
-        int price = Integer.parseInt(req.getParameter("price"));
-        int amount = Integer.parseInt(req.getParameter("amount"));
-        int categories = Integer.parseInt(req.getParameter("categories"));
-        int brand = Integer.parseInt(req.getParameter("brand"));
+
         int status = Integer.parseInt(req.getParameter("status"));
         int id = Integer.parseInt(req.getParameter("id"));
-        int seller_id = Integer.parseInt(req.getParameter("seller_id"));
-        String image = req.getParameter("image");
-        Product product = new Product(id, name, price, description,
-                image, categories, seller_id, amount, status, brand);
+
+
+        Product product = new Product();
+        product.setStatus(status);
+        product.setId(id);
 
         String msg;
 
         if (action.equals("edit")) {
-            productService.update(product);
+            productService.updateStatus(product);
             msg = "Update product successfully";
         } else {
             productService.insert(product);

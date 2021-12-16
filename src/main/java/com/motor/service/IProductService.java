@@ -15,6 +15,8 @@ public interface IProductService {
 
     void update(Product product);
 
+    void updateStatus(Product product);
+
     void delete(int id);
 
     List<Product> findTopSelling();
