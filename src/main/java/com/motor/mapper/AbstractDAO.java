@@ -11,7 +11,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
     private final String portNumber = "1433";
     private final String instance = "";// MSSQLSERVER LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
     private final String userID = "sa";
-    private final String password = "123456";
+    private final String password = "1234";
 
     private Connection getConnection() throws Exception {
         String url = "jdbc:sqlserver://" + serverName + ":" + portNumber + "\\" + instance + ";databaseName=" + dbName;
